@@ -20,6 +20,7 @@ print {
             display: flex;
             color: inherit;
             font: inherit;
+            cursor: pointer;
 
             > * {
                 margin: auto 0;

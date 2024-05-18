@@ -31,9 +31,13 @@
             </button>
             
         </form>
-        <a th:href="@{/usuario/registro}" class="icono">
+        <a  sec:authorize="!isAuthenticated()"  th:href="@{/usuario/registro}" class="icono">
             <span class="material-symbols-outlined">how_to_reg</span>
             <span>registrarse</span>
+        </a>
+        <a  sec:authorize="isAuthenticated()"  th:href="@{/usuario/perfil}" class="icono">
+            <span class="material-symbols-outlined">person</span>
+            <span>mi cuenta</span>
         </a>
     </header>
 </body>

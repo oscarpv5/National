@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Editar Usuario')}">
+</head>
+
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">person</span>
+                    <span>USUARIO</span>
+                    <span class="material-symbols-outlined">person</span>
+                </h2>
+                <form th:action="@{/usuario/editar}" method="post" th:object="${usuarioForm}">
+                    DNI: <input type="text" th:field="*{dni}" readonly="true"><br>
+                    Nombre: <input type="text" th:field="*{nombre}" readonly="true"><br>
+                    Contraseña: <input type="password" th:field="*{contrasena}"><br>
+                    Email: <input type="email" th:field="*{email}">
+                    <input type="hidden" th:field="*{rol}"><br>
+                    <input type="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

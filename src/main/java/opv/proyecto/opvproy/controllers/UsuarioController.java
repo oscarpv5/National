@@ -27,6 +27,12 @@ public class UsuarioController {
         return "Usuario/listUsuario";
     }
 
+    @GetMapping("/perfil")
+    public String editarPerfil (Model model) {
+        model.addAttribute("usuarioForm", usuarioService.obtenerUsuarioActual().get());
+        return "Usuario/EditPerfil";
+    }
+
     @GetMapping("/borrar/{dni}")
     public String showDelete(@PathVariable String dni) {
         try {

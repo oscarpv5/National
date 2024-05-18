@@ -1,9 +1,12 @@
 package opv.proyecto.opvproy.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +31,12 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
+    public Optional<Usuario> obtenerUsuarioActual() {
+        var contexto = SecurityContextHolder.getContext();
+        return contexto instanceof AnonymousAuthenticationToken
+        ? Optional.empty()
+        : usuarioRepository.findByNombre(contexto.getAuthentication().getName());
+    }
     public List<Usuario> obtenerTodos() {
         return usuarioRepository.findAll();
     }
@@ -37,7 +46,20 @@ public class UsuarioService {
     }
 
     public Usuario editar(Usuario usuario) {
-        usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
+        Usuario usuarioActual = this.obtenerUsuarioActual()
+            .orElseThrow(RuntimeException::new);
+        Usuario usuarioGuardado = usuarioRepository.findById(usuario.getDni())
+            .orElseThrow(RuntimeException::new);
+        
+        if (!usuario.getContrasena().isEmpty()) {
+            usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
+        }
+        else {
+            usuario.setContrasena(usuarioGuardado.getContrasena());
+        }
+        if (usuarioActual.getRol() != Rol.ADMIN) {
+            usuario.setRol(usuarioGuardado.getRol());
+        }
         return usuarioRepository.save(usuario);
     }
 
