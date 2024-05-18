@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Usuario')}">
+</head>
+
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <h1>USUARIO</h1>
+    <ul th:replace="fragmento.html :: enlaces"></ul>
+    <table class="tabla">
+        <thead>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${lista}">
+                <td th:text="${usuario.dni}"></td>
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.email}"></td>
+                <td th:text="${usuario.rol}"></td>
+                <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/usuario/editar/{dni}(dni = ${usuario.dni})}">Editar</a></td>
+                <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/usuario/borrar/{dni}(dni = ${usuario.dni})}">Borrar</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/usuario/nuevo}">Nuevo usuario</a><br>
+    <a th:href="@{/}">Inicio</a><br>
+    <img style="display: block;" src="usuario.jpg" />
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

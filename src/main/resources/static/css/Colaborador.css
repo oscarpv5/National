@@ -1,0 +1,71 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    main>aside:last-child {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    main>aside:last-child>section {
+        display: grid;
+        justify-content: space-around;
+        column-gap: 1rem;
+        flex: 1;
+        grid-template-columns: repeat(2, 1fr);
+        /* Define 2 columnas de igual tamaño */
+        grid-auto-flow: row;
+        /* Asegura que los elementos se coloquen en filas */
+        grid-auto-rows: auto;
+
+        >a {
+            display: grid;
+        }
+
+        >a>img {
+            width: 9rem;
+            object-fit: cover;
+            margin: auto;
+        }
+    }
+
+    main>aside:last-child>div {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {
+    main>aside:last-child>section {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {
+    main>aside:last-child>section {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {
+    main>aside:last-child>section {
+        grid-template-columns: repeat(5, 1fr);
+
+    }
+}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {
+    main>aside:last-child>section {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}

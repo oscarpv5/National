@@ -1,0 +1,70 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    .carrusel {
+        >div:first-child {
+            display: flex;
+            justify-content: center;
+
+            >img {
+                display: block;
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            >div:has(button) {
+                display: flex;
+                margin: auto;
+
+                >button {
+                    position: relative;
+                    padding: 0;
+                    z-index: 2;
+                    border: unset;
+                    outline: unset;
+                    background-color: transparent;
+                    font-size: 50px;
+                    color: white;
+                    transition: color .7s;
+                }
+
+                >button:hover {
+                    color: black;
+                    transition: color .7s;
+                }
+            }
+        }
+
+        >div:last-child {
+            display: flex;
+            justify-content: center;
+            gap: .25rem;
+            color: white;
+            transition: color .7s;
+
+            & input {
+                display: none;
+            }
+
+            >label:has(input:checked) {
+                color: black;
+
+            }
+        }
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Jugador')}">
+</head>
+
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">directions_run</span>
+                    <span>JUGADORES</span>
+                    <span class="material-symbols-outlined">directions_run</span>
+                </h2>
+                <table class="tabla">
+                    <thead>
+                        <th>Dni</th>
+                        <th>Nombre</th>
+                        <th>Ubicacion</th>
+                        <th>Club</th>
+                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="jugador : ${lista}">
+                            <td th:text="${jugador.dni}"></td>
+                            <td th:text="${jugador.nombre}"></td>
+                            <td th:text="${jugador.ubicacion}"></td>
+                            <td th:text="${jugador.club.nombre}"></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/jugadores/editar/{dni}(dni = ${jugador.dni})}">Editar</a></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/jugadores/borrar/{dni}(dni = ${jugador.dni})}">Borrar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a th:href="@{/jugadores/nuevo}">Nuevo jugador</a><br>
+        </section>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

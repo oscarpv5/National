@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+</head>
+
+<body>
+    <header th:fragment="header">
+        <a th:href="@{/quienessomos}" class="icono">
+            <span class="material-symbols-outlined">help</span>
+            <span>quienes somos</span>
+        </a>
+        <a th:href="@{/favoritos}" class="icono">
+            <span class="material-symbols-outlined">stars</span>
+            <span>favoritos</span>
+        </a>
+        <a th:href="@{/}" class="logo">
+            <img src="/img/logo.png">
+            <span>national football</span>
+            <span>competition</span>
+            <img src="/img/logo.png">
+        </a>
+        <a sec:authorize="!isAuthenticated()" th:href="@{/login}" class="icono">
+            <span class="material-symbols-outlined">login</span>
+            <span>iniciar sesion</span>
+        </a>
+        <form method="post" sec:authorize="isAuthenticated()" th:action="@{/logout}">
+            <button class="icono">
+                <span class="material-symbols-outlined">logout</span>
+                <span>cerrar sesion</span>
+            </button>
+            
+        </form>
+        <a th:href="@{/usuario/registro}" class="icono">
+            <span class="material-symbols-outlined">how_to_reg</span>
+            <span>registrarse</span>
+        </a>
+    </header>
+</body>
+
+</html>

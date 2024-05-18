@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Liga')}">
+</head>
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">trophy</span>
+                    <span>LIGA</span>
+                    <span class="material-symbols-outlined">trophy</span>
+                </h2>
+                <table class="tabla">
+                    <thead>
+                        <th>Codigo</th>
+                        <th>Comunidad Autonoma</th>
+                        <th>Region</th>
+                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="liga : ${lista}">
+                            <td th:text="${liga.codigo}"></td>
+                            <td th:text="${liga.comunidadAutonoma}"></td>
+                            <td th:text="${liga.region}"></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/liga/editar/{codigo}(codigo = ${liga.codigo})}">Editar</a></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/liga/borrar/{codigo}(codigo = ${liga.codigo})}">Borrar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a th:href="@{/liga/nuevo}">Nueva liga</a><br>
+        </section>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

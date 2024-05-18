@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Nuevo Usuario')}">
+</head>
+
+<body>
+  <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+  <main>
+    <section></section>
+    <div>
+      <h1>Nuevo Usuario</h1>
+      <form method="post" th:action="@{/usuario/registro}" th:object="${usuarioForm}">
+          DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
+          Nombre: <input type="text" th:field="*{nombre}"><br>
+          Contraseña: <input type="password" th:field="*{contrasena}"><br>
+          Email: <input type="email" th:field="*{email}"><br>
+          <input type="submit">
+      </form>
+    </div>
+
+  </main>
+  
+
+  <footer th:insert="~{fragmentos/Footer.html :: footer}">
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    .tabla {
+        background-color: #FAFAFA;
+        color: #000;
+        overflow: hidden;
+        border-radius: .33rem;
+        font: 1.2rem sans-serif;
+        width: 50vw;
+                border-spacing: 0;
+
+        > thead {
+            background-color: #CCC;
+        }
+        
+        > tbody > tr:not(:first-child) > td {
+            border-top: .15rem solid #CCC;
+        }
+
+        > tbody > tr > td:not(:last-child) {
+            border-right: 0.15rem solid #CCC;
+        }
+
+        & tr > td, & tr > th {
+            padding: .5rem;
+            text-align: center;
+
+            & a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {}

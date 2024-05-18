@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Editar Liga')}">
+</head>
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <form th:action="@{/liga/editar}" method="post" th:object="${ligaForm}">
+        Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
+        Comunidad Autonoma: <input type="text" th:field="*{comunidadAutonoma}"><br>
+        Region: <input type="text" th:field="*{region}"><br>
+        <input type="submit">
+    </form>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

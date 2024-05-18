@@ -1,0 +1,51 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {
+    main {
+        display: grid;
+        grid-template-rows: unset;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 2rem;
+        
+        /* Simular titulo centrado cuando solo hay dos columnas */
+        > section > div > h2 {
+            margin-right: 25vw;
+        }
+
+        >* {
+            width: unset;
+
+        }
+    }
+
+    main:has(> aside + section + aside) {
+        grid-template-columns: 1fr 2fr 1fr;
+
+        /* Desactiva el centrado simulado */
+        > section > div > h2 {
+            margin-right: unset;
+        }
+
+    }
+}

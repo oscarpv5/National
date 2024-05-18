@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <aside th:fragment="aside" class="navegacion">
+        <a th:href="@{/liga}">
+            <span class="material-symbols-outlined">trophy</span>
+            <span>liga</span>
+        </a>
+        <a  th:href="@{/club}">
+            <span class="material-symbols-outlined">groups</span>
+            <span>club</span>
+        </a>
+        <a  th:href="@{/campo}">
+            <span class="material-symbols-outlined">stadium</span>
+            <span>campo</span>
+        </a>
+        <a  th:href="@{/jugadores}">
+            <span class="material-symbols-outlined">directions_run</span>
+            <span>jugador</span>
+        </a>
+        <a  th:href="@{/partido}">
+            <span class="material-symbols-outlined">sports</span>
+            <span>partido</span>
+        </a>
+    </aside>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Club')}">
+</head>
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">groups</span>
+                    <span>CLUB</span>
+                    <span class="material-symbols-outlined">groups</span>
+                </h2>
+                <table class="tabla">
+                    <thead>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Liga</th>
+                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="club : ${lista}">
+                            <td th:text="${club.codigo}"></td>
+                            <td th:text="${club.nombre}"></td>
+                            <td th:text="${club.liga.codigo}"></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/club/editar/{codigo}(codigo = ${club.codigo})}">Editar</a></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/club/borrar/{codigo}(codigo = ${club.codigo})}">Borrar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a th:href="@{/club/nuevo}">Nuevo club</a><br>
+        </section>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+</head>
+
+<body>
+    <footer th:fragment="footer">
+        <div class="ayuda">
+            <div>
+                <a th:href="@{/ayuda}">ayuda</a>
+                <span>|</span>
+                <a th:href="@{/sugerencias}">sugerencias</a>
+                <span>|</span>
+                <a th:href="@{/politica}">política de cookies</a>
+                <span>|</span>
+                <a th:href="@{/copyright}">copyright</a>
+            </div>
+        </div>
+        <div class="logos">
+            <a href="https://www.facebook.com/"><img src="/img/facebook.svg"></a>
+            <a href="https://www.twitter.com/"><img src="/img/twitter.svg" class="twitter"></a>
+            <a href="https://www.instagram.com/"><img src="/img/instagram.svg"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

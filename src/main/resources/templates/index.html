@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('National Football Competition')}">
+</head>
+
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">density_medium</span>
+                    <span>NOVEDADES</span>
+                    <span class="material-symbols-outlined">density_medium</span>
+                </h2>
+                <div class="carrusel">
+                    <div>
+                        <div>
+                            <button class="material-symbols-outlined">navigate_before</button>
+                        </div>
+                        <img src="img/Partido_Jornada.gif">
+                        <div>
+                            <button class="material-symbols-outlined">navigate_next</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="material-symbols-outlined"> radio_button_checked
+                            <input type="radio" checked name="boton">
+                        </label>
+                        <label class="material-symbols-outlined">
+                            <!-- radio_button_unchecked -->
+                            radio_button_checked
+                            <input type="radio" name="boton">
+                        </label>
+                        <label class="material-symbols-outlined">
+                            <!-- radio_button_unchecked -->
+                            radio_button_checked
+                            <input type="radio" name="boton">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <form class="filtro">
+                <div>
+                    <span>código</span>
+                    <select name="codigo" id="codigo">
+                        <option hidden>selecciona un codigo</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <span>comunidad autonóma</span>
+                    <select name="CA" id="CA">
+                        <option hidden>selecciona una comunidad autonoma</option>
+                        <option value="galicia">Galicia</option>
+                        <option value="cataluna">Cataluña</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="andalucia">Andalucia</option>
+                        <option value="asturias">Asturias</option>
+                    </select>
+                </div>
+                <div>
+                    <span>región</span>
+                    <select name="region" id="region">
+                        <option hidden>selecciona una region</option>
+                        <option value="coruna">Coruña</option>
+                        <option value="lugo">Lugo</option>
+                        <option value="pontevedra">Pontevedra</option>
+                        <option value="ourense">Ourense</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="tarragona">Tarragona</option>
+                        <option value="lerida">Lerida</option>
+                        <option value="gerona">Gerona</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="huelva">Huelva</option>
+                        <option value="sevilla">Sevilla</option>
+                        <option value="cadiz">Cadiz</option>
+                        <option value="malaga">Malaga</option>
+                        <option value="cordoba">Cordoba</option>
+                        <option value="jaen">Jaen</option>
+                        <option value="granada">Granada</option>
+                        <option value="almeria">Almeria</option>
+                        <option value="asturias">Asturias</option>
+                    </select>
+                </div>
+                <span>
+                    <button type="submit">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </span>
+            </form>
+        </section>
+
+        <aside>
+            <div>colaboracion</div>
+            <section>
+                <a href="https://rfef.es/es"><img src="img/española.svg"></a>
+                <a href="https://www.futgal.es/pnfg/"><img src="img/gallega.png"></a>
+                <a href="https://www.fcf.cat/"><img src="img/catalana.png"></a>
+                <a href="https://www.rffm.es/"><img src="img/madrilena.png"></a>
+                <a href="https://www.rfaf.es/pnfg/"><img src="img/andaluza.png"></a>
+                <a href="https://www.asturfutbol.es/pnfg/"><img src="img/asturiana.png"></a>
+            </section>
+        </aside>
+    </main>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

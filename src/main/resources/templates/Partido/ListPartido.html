@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Partido')}">
+</head>
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">sports</span>
+                    <span>PARTIDO</span>
+                    <span class="material-symbols-outlined">sports</span>
+                </h2>
+                <table class="tabla">
+                    <thead>
+                        <th>Codigo</th>
+                        <th>Jornada</th>
+                        <th>Local</th>
+                        <th>Visitante</th>
+                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="partido : ${lista}">
+                            <td th:text="${partido.codigo}"></td>
+                            <td th:text="${partido.jornada}"></td>
+                            <td th:text="${partido.local.nombre}"></td>
+                            <td th:text="${partido.visitante.nombre}"></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/partido/editar/{codigo}(codigo = ${partido.codigo})}">Editar</a></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/partido/borrar/{codigo}(codigo = ${partido.codigo})}">Borrar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a th:href="@{/partido/nuevo}">Nuevo partido</a><br>
+        </section>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

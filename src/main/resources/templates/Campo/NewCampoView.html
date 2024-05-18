@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Nuevo Campo')}">
+</head>
+
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <section></section>
+        <form th:action="@{/campo/nuevo}" method="post" th:object="${campoForm}">
+            Nombre: <input type="text" th:field="*{nombre}"><br>
+            Ubicacion: <input type="text" th:field="*{ubicacion}"><br>
+            Club: <input type="text" th:field="*{club}"><br>
+            <input type="submit">
+        </form>
+    </main>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

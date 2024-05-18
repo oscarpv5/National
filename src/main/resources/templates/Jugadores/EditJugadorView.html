@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmls:th="http://www.thymeleaf.org">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Editar Jugador')}">
+</head>
+<body>
+    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <form th:action="@{/jugadores/editar}" method="post" th:object="${jugadorForm}">
+        DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
+        Nombre: <input type="text" th:field="*{nombre}"><br>
+        Ubicacion: <input type="text" th:field="*{ubicacion}"><br>
+        Club: <input type="text" th:field="*{club}"><br>
+        <input type="submit">
+    </form>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>
