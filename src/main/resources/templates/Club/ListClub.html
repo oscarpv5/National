@@ -3,6 +3,9 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Club')}">
 </head>
+<head>
+    <script src="/js/clubs.js" type="module"></script>
+</head>
 <body>
     <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
     <main>
@@ -16,19 +19,12 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Liga</th>
+                        <th class="orden Codigo">Codigo</th>
+                        <th class="orden Nombre">Nombre</th>
+                        <th class="orden Liga">Liga</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
                     </thead>
-                    <tbody>
-                        <tr th:each="club : ${lista}">
-                            <td th:text="${club.codigo}"></td>
-                            <td th:text="${club.nombre}"></td>
-                            <td th:text="${club.liga.codigo}"></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/club/editar/{codigo}(codigo = ${club.codigo})}">Editar</a></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/club/borrar/{codigo}(codigo = ${club.codigo})}">Borrar</a></td>
-                        </tr>
+                    <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>

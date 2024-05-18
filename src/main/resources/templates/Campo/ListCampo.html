@@ -3,6 +3,9 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Campo')}">
 </head>
+<head>
+    <script src="/js/campos.js" type="module"></script>
+</head>
 
 <body>
     <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
@@ -17,19 +20,12 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th>Nombre</th>
-                        <th>Ubicacion</th>
-                        <th>Club</th>
+                        <th class="orden Nombre">Nombre</th>
+                        <th class="orden Ubicacion">Ubicacion</th>
+                        <th class="orden Club">Club</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
                     </thead>
-                    <tbody>
-                        <tr th:each="campo : ${lista}">
-                            <td th:text="${campo.nombre}"></td>
-                            <td th:text="${campo.ubicacion}"></td>
-                            <td th:text="${campo.club.nombre}"></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/campo/editar/{nombre}(nombre = ${campo.nombre})}">Editar</a></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/campo/borrar/{nombre}(nombre = ${campo.nombre})}">Borrar</a></td>
-                        </tr>
+                    <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>

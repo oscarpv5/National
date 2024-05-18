@@ -30,8 +30,18 @@ print {
                 margin-left: .5rem;
             }
         }
-
+        
         >.icono {
+            >span:first-of-type {
+                font-size: 2rem;
+            }
+
+            >:last-child {
+                display: none;
+            }
+        }
+
+        >form>button.icono {
             >span:first-of-type {
                 font-size: 2rem;
             }
@@ -108,6 +118,7 @@ print {
 /* XXL -- -- ancho de 1408px*/
 @media screen and (min-width: 88rem) {
     header {
+        >form>button.icono>:last-child,
         >.icono>:last-child {
             display: unset;
         }

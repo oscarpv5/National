@@ -1,5 +1,8 @@
 package opv.proyecto.opvproy.controllers;
 
+import java.util.ArrayList;
+
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +25,6 @@ public class LigaController {
     @GetMapping
     public String vistaLiga(Model model) {
         model.addAttribute("pagina", "/liga");
-        model.addAttribute("lista", ligaService.obtenerTodos());
         model.addAttribute("ligaBuscados", ligaService.ligaBuscados());
         return "Liga/ListLiga";
     }

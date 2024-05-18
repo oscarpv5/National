@@ -3,6 +3,9 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Jugador')}">
 </head>
+<head>
+    <script src="/js/jugadores.js" type="module"></script>
+</head>
 
 <body>
     <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
@@ -17,21 +20,13 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th>Dni</th>
-                        <th>Nombre</th>
-                        <th>Ubicacion</th>
-                        <th>Club</th>
+                        <th class="orden Dni">Dni</th>
+                        <th class="orden Nombre">Nombre</th>
+                        <th class="orden Ubicacion">Ubicacion</th>
+                        <th class="orden Club">Club</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
                     </thead>
-                    <tbody>
-                        <tr th:each="jugador : ${lista}">
-                            <td th:text="${jugador.dni}"></td>
-                            <td th:text="${jugador.nombre}"></td>
-                            <td th:text="${jugador.ubicacion}"></td>
-                            <td th:text="${jugador.club.nombre}"></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/jugadores/editar/{dni}(dni = ${jugador.dni})}">Editar</a></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/jugadores/borrar/{dni}(dni = ${jugador.dni})}">Borrar</a></td>
-                        </tr>
+                    <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>

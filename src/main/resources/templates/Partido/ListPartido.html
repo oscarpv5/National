@@ -3,6 +3,9 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Partido')}">
 </head>
+<head>
+    <script src="/js/partidos.js" type="module"></script>
+</head>
 <body>
     <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
     <main>
@@ -16,21 +19,13 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th>Codigo</th>
-                        <th>Jornada</th>
-                        <th>Local</th>
-                        <th>Visitante</th>
+                        <th class="orden Codigo">Codigo</th>
+                        <th class="orden Jornada">Jornada</th>
+                        <th class="orden Local">Local</th>
+                        <th class="orden Visitante">Visitante</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
                     </thead>
-                    <tbody>
-                        <tr th:each="partido : ${lista}">
-                            <td th:text="${partido.codigo}"></td>
-                            <td th:text="${partido.jornada}"></td>
-                            <td th:text="${partido.local.nombre}"></td>
-                            <td th:text="${partido.visitante.nombre}"></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/partido/editar/{codigo}(codigo = ${partido.codigo})}">Editar</a></td>
-                            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/partido/borrar/{codigo}(codigo = ${partido.codigo})}">Borrar</a></td>
-                        </tr>
+                    <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>
