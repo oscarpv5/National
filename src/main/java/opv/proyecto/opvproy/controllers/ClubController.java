@@ -22,8 +22,6 @@ public class ClubController {
     @GetMapping
     public String vistaClub(Model model) {
         model.addAttribute("pagina", "/club");
-        model.addAttribute("lista", clubService.obtenerTodos());
-        model.addAttribute("clubBuscados", clubService.clubBuscados());
         return "Club/listClub";
     }
 

@@ -22,7 +22,6 @@ public class PartidoController {
     @GetMapping
     public String vistaPartido(Model model) {
         model.addAttribute("pagina", "/partido");
-        model.addAttribute("lista", partidoService.obtenerTodos());
         return "Partido/listPartido";
     }
 

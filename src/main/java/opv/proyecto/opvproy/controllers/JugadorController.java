@@ -22,7 +22,6 @@ public class JugadorController {
     @GetMapping
     public String vistaJugadores(Model model) {
         model.addAttribute("pagina", "/jugadores");
-        model.addAttribute("lista", jugadorService.obtenerTodos());
         return "Jugadores/listJugadores";
     }
 

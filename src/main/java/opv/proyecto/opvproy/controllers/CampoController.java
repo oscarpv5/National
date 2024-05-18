@@ -22,7 +22,6 @@ public class CampoController {
     @GetMapping
     public String vistaCampo(Model model) {
         model.addAttribute("pagina", "/campo");
-        model.addAttribute("lista", campoService.obtenerTodos());
         return "Campo/listCampo";
     }
 
