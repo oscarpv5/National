@@ -38,8 +38,8 @@ function crearFila({ dni, nombre, ubicacion, club }) {
     crearCampo(ubicacion)
     crearCampo(club.nombre)
     if (PERMISOS) {
-        crearEnlace("editar", `/jugador/editar/${dni}`)
-        crearEnlace("borrar", `/jugador/borrar/${dni}`)
+        crearEnlace("editar", `/jugadores/editar/${dni}`)
+        crearEnlace("borrar", `/jugadores/borrar/${dni}`)
     }
     return FILA
 }
