@@ -27,6 +27,10 @@
             <span class="material-symbols-outlined">sports</span>
             <span>partido</span>
         </a>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/usuario}">
+            <span class="material-symbols-outlined">diversity_3</span>
+            <span>usuarios</span>
+        </a>
     </aside>
 </body>
 </html>

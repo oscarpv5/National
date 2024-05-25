@@ -7,10 +7,13 @@ print {
         >h1 {
             margin-inline: auto;
         }
+        >form:has(textarea) {
+            flex: 1;
+
+        }
         >form {
             display: grid;
-            flex: 1;
-            grid-template-columns: 20% 80%;
+            grid-template-columns: 1fr 4fr;
             grid-template-rows: auto auto auto 1fr auto;
             gap: .5rem 1rem;
         }

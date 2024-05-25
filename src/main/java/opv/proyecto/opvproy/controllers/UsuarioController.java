@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
+import opv.proyecto.opvproy.domain.Rol;
 import opv.proyecto.opvproy.domain.Usuario;
 import opv.proyecto.opvproy.dto.NuevoUsuario;
 import opv.proyecto.opvproy.services.UsuarioService;
@@ -22,8 +23,9 @@ public class UsuarioController {
 
     @GetMapping
     public String vistaUsuario(Model model) {
-        model.addAttribute("pagina", "/usuario");
+        model.addAttribute("roles", Rol.values());
         model.addAttribute("lista", usuarioService.obtenerTodos());
+        model.addAttribute("usuarioForm", new Usuario());
         return "Usuario/ListUsuario";
     }
 
@@ -61,12 +63,6 @@ public class UsuarioController {
             return "error/500";
         usuarioService.editar(usuarioForm);
         return "redirect:/usuario";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewUsuario(Model model) {
-        model.addAttribute("usuarioForm", new Usuario());
-        return "Usuario/NewUsuarioView";
     }
 
     @PostMapping("/nuevo")

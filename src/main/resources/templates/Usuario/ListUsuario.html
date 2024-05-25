@@ -5,31 +5,74 @@
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-    <h1>USUARIO</h1>
-    <ul th:replace="fragmento.html :: enlaces"></ul>
-    <table class="tabla">
-        <thead>
-            <th>DNI</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
-        </thead>
-        <tbody>
-            <tr th:each="usuario : ${lista}">
-                <td th:text="${usuario.dni}"></td>
-                <td th:text="${usuario.nombre}"></td>
-                <td th:text="${usuario.email}"></td>
-                <td th:text="${usuario.rol}"></td>
-                <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/usuario/editar/{dni}(dni = ${usuario.dni})}">Editar</a></td>
-                <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/usuario/borrar/{dni}(dni = ${usuario.dni})}">Borrar</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <a th:href="@{/usuario/nuevo}">Nuevo usuario</a><br>
-    <a th:href="@{/}">Inicio</a><br>
-    <img style="display: block;" src="usuario.jpg" />
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">diversity_3</span>
+                    <span>USUARIOS</span>
+                    <span class="material-symbols-outlined">diversity_3</span>
+                </h2>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Contraseña</th>
+                            <th>Rol</th>
+                            <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                        </tr>
+                        <tr sec:authorize="hasRole('ADMIN')">
+                            <td>
+                                <input type="text" placeholder="dni" form="nuevo" name="dni">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="nombre" form="nuevo"
+                                    name="nombre">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="email" form="nuevo"
+                                    name="email">
+                            </td>
+                            <td>
+                                <input type="password" placeholder="contraseña" form="nuevo"
+                                    name="contrasena">
+                            </td>
+                            <td>
+                                <select form="nuevo" name="rol">
+                                    <option th:each="rol : ${roles}" th:value="${rol}" th:text="${rol}"></option>
+                                </select>
+                            </td>
+                            <td colspan="2">
+                                <form id="nuevo" th:action="@{/usuario/nuevo}" method="post" th:object="${usuarioForm}">
+                                    <button>nuevo</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${lista}">
+                            <td th:text="${usuario.dni}"></td>
+                            <td th:text="${usuario.nombre}"></td>
+                            <td th:text="${usuario.email}"></td>
+                            <td>***</td>
+                            <td th:text="${usuario.rol}"></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a
+                                    th:href="@{/usuario/editar/{dni}(dni = ${usuario.dni})}">Editar</a></td>
+                            <td sec:authorize="hasRole('ADMIN')"><a
+                                    th:href="@{/usuario/borrar/{dni}(dni = ${usuario.dni})}">Borrar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+
+    </main>
+
 
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
