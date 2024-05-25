@@ -30,7 +30,7 @@
                     </tbody>
                 </table>
             </div>
-            <a th:href="@{/liga/nuevo}">Nueva liga</a><br>
+            <a sec:authorize="hasRole('ADMIN')" th:href="@{/liga/nuevo}">Nueva liga</a><br>
         </section>
     </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">

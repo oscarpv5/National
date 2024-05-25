@@ -28,7 +28,7 @@
                     </tbody>
                 </table>
             </div>
-            <a th:href="@{/club/nuevo}">Nuevo club</a><br>
+            <a sec:authorize="hasRole('ADMIN')" th:href="@{/club/nuevo}">Nuevo club</a><br>
         </section>
     </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
