@@ -6,13 +6,13 @@
 
 <body>
     <header th:fragment="header">
+        <a th:href="@{/contacto}" class="icono">
+            <span class="material-symbols-outlined">call</span>
+            <span>contacto</span>
+        </a>
         <a th:href="@{/quienessomos}" class="icono">
             <span class="material-symbols-outlined">help</span>
             <span>quienes somos</span>
-        </a>
-        <a th:href="@{/favoritos}" class="icono">
-            <span class="material-symbols-outlined">stars</span>
-            <span>favoritos</span>
         </a>
         <a th:href="@{/}" class="logo">
             <img src="/img/logo.png">

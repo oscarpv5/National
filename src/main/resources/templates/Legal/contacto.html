@@ -8,7 +8,13 @@
     <main>
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
         <section>
-            <h1>Contacto</h1>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">call</span>
+                    <span>contacto</span>
+                    <span class="material-symbols-outlined">call</span>
+                </h2>
+            </div>
             <form th:action="@{/contacto/submit}" method="post" th:object="${formulario}">
                 <label for="nombre">Nombre: </label>
                 <input type="text" th:field="*{nombre}">

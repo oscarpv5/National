@@ -37,6 +37,11 @@ public class Controlador {
         return "legal/copyright";
     }
 
+    @GetMapping("/quienessomos")
+    public String getQuienesSomos() {
+        return "legal/quienessomos";
+    }
+
     @GetMapping("/contacto")
     public String getContacto(Model model) {
         model.addAttribute("formulario", new Formulario());

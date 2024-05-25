@@ -16,6 +16,10 @@ print {
             grid-template-columns: 1fr 4fr;
             grid-template-rows: auto auto auto 1fr auto;
             gap: .5rem 1rem;
+            > input, textarea, select {
+                font-size: 0.7em;
+                padding: .25rem;
+            }
         }
     }
 
