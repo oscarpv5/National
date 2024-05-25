@@ -24,7 +24,7 @@ public class UsuarioController {
     public String vistaUsuario(Model model) {
         model.addAttribute("pagina", "/usuario");
         model.addAttribute("lista", usuarioService.obtenerTodos());
-        return "Usuario/listUsuario";
+        return "Usuario/ListUsuario";
     }
 
     @GetMapping("/perfil")

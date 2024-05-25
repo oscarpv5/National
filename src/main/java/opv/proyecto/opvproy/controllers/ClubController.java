@@ -22,7 +22,7 @@ public class ClubController {
     @GetMapping
     public String vistaClub(Model model) {
         model.addAttribute("pagina", "/club");
-        return "Club/listClub";
+        return "Club/ListClub";
     }
 
     @GetMapping("/borrar/{codigo}")

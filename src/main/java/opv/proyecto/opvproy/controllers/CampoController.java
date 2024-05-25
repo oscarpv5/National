@@ -22,7 +22,7 @@ public class CampoController {
     @GetMapping
     public String vistaCampo(Model model) {
         model.addAttribute("pagina", "/campo");
-        return "Campo/listCampo";
+        return "Campo/ListCampo";
     }
 
     @GetMapping("/borrar/{nombre}")

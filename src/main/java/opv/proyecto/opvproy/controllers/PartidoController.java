@@ -22,7 +22,7 @@ public class PartidoController {
     @GetMapping
     public String vistaPartido(Model model) {
         model.addAttribute("pagina", "/partido");
-        return "Partido/listPartido";
+        return "Partido/ListPartido";
     }
 
     @GetMapping("/borrar/{codigo}")

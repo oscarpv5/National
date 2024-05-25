@@ -22,7 +22,7 @@ public class JugadorController {
     @GetMapping
     public String vistaJugadores(Model model) {
         model.addAttribute("pagina", "/jugadores");
-        return "Jugadores/listJugadores";
+        return "Jugadores/ListJugadores";
     }
 
     @GetMapping("/borrar/{dni}")
