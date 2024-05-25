@@ -12,16 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
 import opv.proyecto.opvproy.domain.Campo;
 import opv.proyecto.opvproy.services.CampoService;
+import opv.proyecto.opvproy.services.ClubService;
 
 @Controller
 @RequestMapping("/campo")
 public class CampoController {
     @Autowired
     CampoService campoService;
+    @Autowired
+    ClubService clubService;
 
     @GetMapping
     public String vistaCampo(Model model) {
         model.addAttribute("pagina", "/campo");
+        model.addAttribute("campoForm", new Campo());
+        model.addAttribute("clubs", clubService.obtenerTodos());
         return "Campo/ListCampo";
     }
 
@@ -57,12 +62,6 @@ public class CampoController {
             return "error/500";
         }
         return "redirect:/campo";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewCampo(Model model) {
-        model.addAttribute("campoForm", new Campo());
-        return "Campo/NewCampoView";
     }
 
     @PostMapping("/nuevo")

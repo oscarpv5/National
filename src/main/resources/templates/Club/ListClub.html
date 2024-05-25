@@ -19,16 +19,36 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th class="orden Codigo">Codigo</th>
+                        <tr>
+                            <th class="orden Codigo">Codigo</th>
                         <th class="orden Nombre">Nombre</th>
                         <th class="orden Liga">Liga</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                        </tr>
+                        <tr sec:authorize="hasRole('ADMIN')">
+                            <td>
+                                <input type="text" placeholder="Codigo" form="nuevo" name="codigo">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="nombre" form="nuevo"
+                                    name="nombre">
+                            </td>
+                            <td>
+                                <select form="nuevo" name="liga">
+                                    <option th:each="liga : ${ligas}" th:value="${liga.codigo}" th:text="${liga.codigo}"></option>
+                                </select>
+                            </td>
+                            <td colspan="2">
+                                <form id="nuevo" th:action="@{/club/nuevo}" method="post" th:object="${clubForm}">
+                                    <button>nuevo</button>
+                                </form>
+                            </td>
+                        </tr>
                     </thead>
                     <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>
-            <a sec:authorize="hasRole('ADMIN')" th:href="@{/club/nuevo}">Nuevo club</a><br>
         </section>
     </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">

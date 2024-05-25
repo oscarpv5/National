@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,6 +20,7 @@ import lombok.NoArgsConstructor;
 public class Usuario {
     @Id
     @NotNull
+    @Pattern(regexp = "[0-9]{8}[A-Z]")
     private String dni;
 
     @Column(unique = true)

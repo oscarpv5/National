@@ -22,6 +22,7 @@ public class LigaController {
     @GetMapping
     public String vistaLiga(Model model) {
         model.addAttribute("pagina", "/liga");
+        model.addAttribute("ligaForm", new Liga());
         return "Liga/ListLiga";
     }
 
@@ -53,12 +54,6 @@ public class LigaController {
             return "error/500";
         ligaService.editar(ligaForm);
         return "redirect:/liga";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewLiga(Model model) {
-        model.addAttribute("ligaForm", new Liga());
-        return "Liga/NewLigaView";
     }
 
     @PostMapping("/nuevo")

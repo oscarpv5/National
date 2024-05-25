@@ -31,8 +31,8 @@ public class Main {
 			campoService.añadir(new Campo("Municipal de Meicende", "Arteixo", club1));
 			campoService.añadir(new Campo("As Mariñas", "Sada", club2));
 			
-			partidoService.añadir(new Partido(321, 2, club1, club2));
-			partidoService.añadir(new Partido(654, 5, club2, club1));
+			partidoService.añadir(new Partido(321, "2-0", club1, club2));
+			partidoService.añadir(new Partido(654, "0-1", club2, club1));
 
 			usuarioService.añadir(new Usuario("79346384H", "Oscar", "1234", "oscar@gmail.com", Rol.ADMIN));
 			usuarioService.añadir(new Usuario("79346385L", "Aaron", "1234", "aaron@gmail.com", Rol.USER));

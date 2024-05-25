@@ -3,12 +3,13 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Campo')}">
 </head>
+
 <head>
     <script src="/js/campos.js" type="module"></script>
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
     <main>
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
         <section>
@@ -20,18 +21,38 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th class="orden Nombre">Nombre</th>
-                        <th class="orden Ubicacion">Ubicacion</th>
-                        <th class="orden Club">Club</th>
-                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                        <tr>
+                            <th class="orden Nombre">Nombre</th>
+                            <th class="orden Ubicacion">Ubicacion</th>
+                            <th class="orden Club">Club</th>
+                            <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                        </tr>
+                        <tr sec:authorize="hasRole('ADMIN')">
+                            <td>
+                                <input type="text" placeholder="Nombre" form="nuevo" name="nombre">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Ubicacion" form="nuevo"
+                                    name="ubicacion">
+                            </td>
+                            <td>
+                                <select form="nuevo" name="club">
+                                    <option th:each="club : ${clubs}" th:value="${club.codigo}" th:text="${club.nombre}"></option>
+                                </select>
+                            </td>
+                            <td colspan="2">
+                                <form id="nuevo" th:action="@{/campo/nuevo}" method="post" th:object="${campoForm}">
+                                    <button>nuevo</button>
+                                </form>
+                            </td>
+                        </tr>
                     </thead>
                     <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>
-            <a th:href="@{/campo/nuevo}">Nuevo campo</a><br>
         </section>
-        
+
     </main>
 
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">

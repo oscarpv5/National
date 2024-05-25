@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
 import opv.proyecto.opvproy.domain.Club;
 import opv.proyecto.opvproy.services.ClubService;
+import opv.proyecto.opvproy.services.LigaService;
 
 @Controller
 @RequestMapping("/club")
@@ -19,9 +20,14 @@ public class ClubController {
     @Autowired
     ClubService clubService;
 
+    @Autowired
+    LigaService ligaService;
+
     @GetMapping
     public String vistaClub(Model model) {
         model.addAttribute("pagina", "/club");
+        model.addAttribute("clubForm", new Club());
+        model.addAttribute("ligas", ligaService.obtenerTodos());
         return "Club/ListClub";
     }
 
@@ -57,12 +63,6 @@ public class ClubController {
             return "error/500";
         }
         return "redirect:/club";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewClub(Model model) {
-        model.addAttribute("clubForm", new Club());
-        return "Club/NewClubView";
     }
 
     @PostMapping("/nuevo")

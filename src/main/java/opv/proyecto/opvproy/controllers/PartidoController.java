@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
 import opv.proyecto.opvproy.domain.Partido;
+import opv.proyecto.opvproy.services.ClubService;
 import opv.proyecto.opvproy.services.PartidoService;
 
 @Controller
@@ -19,9 +20,14 @@ public class PartidoController {
     @Autowired
     PartidoService partidoService;
 
+    @Autowired
+    ClubService clubService;
+
     @GetMapping
     public String vistaPartido(Model model) {
         model.addAttribute("pagina", "/partido");
+        model.addAttribute("partidoForm", new Partido());
+        model.addAttribute("clubs", clubService.obtenerTodos());
         return "Partido/ListPartido";
     }
 
@@ -57,12 +63,6 @@ public class PartidoController {
                 return "error/500";
             }
         return "redirect:/partido";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewPartido(Model model) {
-        model.addAttribute("partidoForm", new Partido());
-        return "Partido/NewPartidoView";
     }
 
     @PostMapping("/nuevo")

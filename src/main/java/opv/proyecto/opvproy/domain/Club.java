@@ -3,6 +3,7 @@ package opv.proyecto.opvproy.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ import lombok.NonNull;
 @Entity
 public class Club {
     @Id
+    @Min(1)
     private Integer codigo;
 
     @NotBlank

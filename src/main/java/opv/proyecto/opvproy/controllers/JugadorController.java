@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
 import opv.proyecto.opvproy.domain.Jugador;
+import opv.proyecto.opvproy.services.ClubService;
 import opv.proyecto.opvproy.services.JugadorService;
 
 @Controller
@@ -19,9 +20,14 @@ public class JugadorController {
     @Autowired
     JugadorService jugadorService;
 
+    @Autowired
+    ClubService clubService;
+
     @GetMapping
     public String vistaJugadores(Model model) {
         model.addAttribute("pagina", "/jugadores");
+        model.addAttribute("jugadorForm", new Jugador());
+        model.addAttribute("clubs", clubService.obtenerTodos());
         return "Jugadores/ListJugadores";
     }
 
@@ -57,12 +63,6 @@ public class JugadorController {
             return "error/500";
         }
         return "redirect:/jugadores";
-    }
-
-    @GetMapping("/nuevo")
-    public String showNewJugador(Model model) {
-        model.addAttribute("jugadorForm", new Jugador());
-        return "Jugadores/NewJugadorView";
     }
 
     @PostMapping("/nuevo")

@@ -18,7 +18,7 @@ async function descargarPartidos() {
         .then((respuesta) => respuesta.json())
 }
 
-function crearFila({ codigo, jornada, local, visitante }) {
+function crearFila({ codigo, resultado, local, visitante }) {
     const FILA = document.createElement("tr")
     function crearCampo(valor) {
         const CAMPO = document.createElement("td")
@@ -34,7 +34,7 @@ function crearFila({ codigo, jornada, local, visitante }) {
         FILA.appendChild(CAMPO)
     }
     crearCampo(codigo)
-    crearCampo(jornada)
+    crearCampo(resultado)
     crearCampo(local.nombre)
     crearCampo(visitante.nombre)
     if (PERMISOS) {
@@ -71,7 +71,7 @@ function imprimirLista(orden = "") {
 imprimirLista()
 
 document.querySelector('.orden.Codigo').addEventListener("click", () => imprimirLista("codigo"))
-document.querySelector('.orden.Jornada').addEventListener("click", () => imprimirLista("jornada"))
+document.querySelector('.orden.Resultado').addEventListener("click", () => imprimirLista("resultado"))
 document.querySelector('.orden.Local').addEventListener("click", () => imprimirLista("local"))
 document.querySelector('.orden.Visitante').addEventListener("click", () => imprimirLista("visitante"))
 
@@ -85,3 +85,17 @@ function marcarOrdenListado(e) {
 
     e.target.classList.add(ORDEN.direccion == "asc" ? "asc" : "desc");
 }
+
+function validarNoMismoEquipo(e) {
+    e.preventDefault()
+    const obtenerValor = (valor) => e.target.elements[valor].value;
+
+    if (obtenerValor('local') === obtenerValor('visitante')) {
+        alert("No el local y visitante no pueden ser el mismo equipo")
+    } else {
+        e.target.submit()
+    }
+    
+}
+
+document.querySelector('form#nuevo').addEventListener("submit", validarNoMismoEquipo)

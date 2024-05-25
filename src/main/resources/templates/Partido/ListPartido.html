@@ -19,17 +19,42 @@
                 </h2>
                 <table class="tabla">
                     <thead>
-                        <th class="orden Codigo">Codigo</th>
-                        <th class="orden Jornada">Jornada</th>
+                        <tr>
+                            <th class="orden Codigo">Codigo</th>
+                        <th class="orden Resultado">Resultado</th>
                         <th class="orden Local">Local</th>
                         <th class="orden Visitante">Visitante</th>
                         <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                        </tr>
+                        <tr sec:authorize="hasRole('ADMIN')">
+                            <td>
+                                <input type="text" placeholder="codigo" form="nuevo" name="codigo">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="resultado" form="nuevo"
+                                    name="resultado">
+                            </td>
+                            <td>
+                                <select form="nuevo" name="local">
+                                    <option th:each="club : ${clubs}" th:value="${club.codigo}" th:text="${club.nombre}"></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select form="nuevo" name="visitante">
+                                    <option th:each="club : ${clubs}" th:value="${club.codigo}" th:text="${club.nombre}"></option>
+                                </select>
+                            </td>
+                            <td colspan="2">
+                                <form id="nuevo" th:action="@{/partido/nuevo}" method="post" th:object="${partidoForm}">
+                                    <button>nuevo</button>
+                                </form>
+                            </td>
+                        </tr>
                     </thead>
                     <tbody class="contenidoTabla">
                     </tbody>
                 </table>
             </div>
-            <a sec:authorize="hasRole('ADMIN')" th:href="@{/partido/nuevo}">Nuevo partido</a><br>
         </section>
     </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">

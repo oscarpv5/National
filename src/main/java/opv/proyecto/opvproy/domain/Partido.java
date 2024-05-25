@@ -3,7 +3,9 @@ package opv.proyecto.opvproy.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,10 +20,12 @@ import lombok.NonNull;
 @Entity
 public class Partido {
     @Id
+    @Min(1)
     private Integer codigo;
 
     @NotNull
-    private Integer jornada;
+    @Pattern(regexp = "[0-9]{1,}-[0-9]{1,}")
+    private String resultado;
 
     @ManyToOne
     @NonNull
