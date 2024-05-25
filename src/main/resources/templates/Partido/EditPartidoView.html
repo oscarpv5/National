@@ -5,15 +5,28 @@
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-    <form th:action="@{/partido/editar}" method="post" th:object="${partidoForm}">
-        Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
-        Jornada: <input type="text" th:field="*{jornada}"><br>
-        Local: <input type="text" th:field="*{local}"><br>
-        Visitante: <input type="text" th:field="*{visitante}"><br>
-        <input type="submit">
-    </form>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
 
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">sports</span>
+                    <span>Partido</span>
+                    <span class="material-symbols-outlined">sports</span>
+                </h2>
+            </div>
+            <form th:action="@{/partido/editar}" method="post" th:object="${partidoForm}">
+                Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
+                Resultado: <input type="text" th:field="*{resultado}"><br>
+                Local: <input type="text" th:field="*{local}"><br>
+                Visitante: <input type="text" th:field="*{visitante}"><br>
+                <input type="submit">
+            </form>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
 </body>

@@ -3,15 +3,29 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Editar Liga')}">
 </head>
-<body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-    <form th:action="@{/liga/editar}" method="post" th:object="${ligaForm}">
-        Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
-        Comunidad Autonoma: <input type="text" th:field="*{comunidadAutonoma}"><br>
-        Region: <input type="text" th:field="*{region}"><br>
-        <input type="submit">
-    </form>
 
+<body>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">trophy</span>
+                    <span>LIGA</span>
+                    <span class="material-symbols-outlined">trophy</span>
+                </h2>
+            </div>
+            <form th:action="@{/liga/editar}" method="post" th:object="${ligaForm}">
+                Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
+                Comunidad Autonoma: <input type="text" th:field="*{comunidadAutonoma}"><br>
+                Region: <input type="text" th:field="*{region}"><br>
+                <input type="submit">
+            </form>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
 </body>

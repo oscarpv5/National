@@ -3,16 +3,30 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Editar Jugador')}">
 </head>
-<body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-    <form th:action="@{/jugadores/editar}" method="post" th:object="${jugadorForm}">
-        DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
-        Nombre: <input type="text" th:field="*{nombre}"><br>
-        Ubicacion: <input type="text" th:field="*{ubicacion}"><br>
-        Club: <input type="text" th:field="*{club}"><br>
-        <input type="submit">
-    </form>
 
+<body>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">directions_run</span>
+                    <span>JUGADORES</span>
+                    <span class="material-symbols-outlined">directions_run</span>
+                </h2>
+            </div>
+            <form th:action="@{/jugadores/editar}" method="post" th:object="${jugadorForm}">
+                DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
+                Nombre: <input type="text" th:field="*{nombre}"><br>
+                Ubicacion: <input type="text" th:field="*{ubicacion}"><br>
+                Club: <input type="text" th:field="*{club}"><br>
+                <input type="submit">
+            </form>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
 </body>

@@ -5,14 +5,27 @@
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-    <form th:action="@{/club/editar}" method="post" th:object="${clubForm}">
-        Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
-        Nombre: <input type="text" th:field="*{nombre}"><br>
-        Liga: <input type="text" th:field="*{liga}"><br>
-        <input type="submit">
-    </form>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
 
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">groups</span>
+                    <span>CLUB</span>
+                    <span class="material-symbols-outlined">groups</span>
+                </h2>
+            </div>
+            <form th:action="@{/club/editar}" method="post" th:object="${clubForm}">
+                Codigo: <input type="text" th:field="*{codigo}" th:readonly="*{codigo}!=null"><br>
+                Nombre: <input type="text" th:field="*{nombre}"><br>
+                Liga: <input type="text" th:field="*{liga}"><br>
+                <input type="submit">
+            </form>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
 </body>
