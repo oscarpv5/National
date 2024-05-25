@@ -46,17 +46,8 @@
             </div>
         </section>
 
-        <aside>
-            <div>colaboracion</div>
-            <section>
-                <a href="https://rfef.es/es"><img src="img/española.svg"></a>
-                <a href="https://www.futgal.es/pnfg/"><img src="img/gallega.png"></a>
-                <a href="https://www.fcf.cat/"><img src="img/catalana.png"></a>
-                <a href="https://www.rffm.es/"><img src="img/madrilena.png"></a>
-                <a href="https://www.rfaf.es/pnfg/"><img src="img/andaluza.png"></a>
-                <a href="https://www.asturfutbol.es/pnfg/"><img src="img/asturiana.png"></a>
-            </section>
-        </aside>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+
     </main>
 
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
