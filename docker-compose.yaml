@@ -1,0 +1,50 @@
+services:
+  national-server:
+    image: 'national:latest'
+    container_name: servidor_java
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:9000
+    environment:
+      - MYSQL_HOST=mysql-server:3306
+      - MYSQL_DATABASE=national
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=password1
+    depends_on:
+      - mysql-server
+    networks:
+      - national_network
+
+  mysql-server:
+    image: mysql
+    container_name: servidor_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password1
+      - MYSQL_DATABASE=national
+    volumes:
+      - mysql_dbs:/var/lib/mysql:rw
+    networks:
+      - national_network
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql-server
+      - PMA_USER=root
+      - PMA_PASSWORD=password1
+    networks:
+      - national_network
+    depends_on:
+      - mysql-server
+      
+networks:
+  national_network:
+    driver: bridge
+
+volumes:
+  mysql_dbs:
