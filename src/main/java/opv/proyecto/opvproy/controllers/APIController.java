@@ -37,7 +37,7 @@ public class APIController {
     @GetMapping("/auth/admin") 
     public ResponseEntity<?> comprobarAdmin() {
         return ResponseEntity
-            .ok()
+            .status(HttpStatus.ACCEPTED)
             .build();
     }
 

@@ -9,7 +9,7 @@ const ORDEN = {
 
 async function comprobarPermisos() {
     return await fetch("/api/v1/auth/admin")
-        .then((respuesta) => respuesta.status == 200)
+        .then((respuesta) => respuesta.status == 202)
         .catch(_ => false)
 }
 
