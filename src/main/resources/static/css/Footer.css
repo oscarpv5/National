@@ -22,18 +22,18 @@ print {
         display: grid;
     }
 
-    a {
+    footer a {
         color: white;
         text-decoration: none;
         font-size: 10pt;
     }
 
-    .twitter {
+    footer .twitter {
         background-color: white;
         border-radius: 20%;
     }
 
-    div.ayuda>* {
+    footer div.ayuda>* {
         margin: auto 0;
         font-family: 'Open Sans', sans-serif;
     }

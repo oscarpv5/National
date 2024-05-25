@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Formulario Enviado')}"> </head>
+
+<body>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section class="mensajeEnviado">
+            <h1>Su mensaje se ha enviado correctamente</h1>
+        </section>
+        <aside>
+            <div>colaboracion</div>
+            <section>
+                <a href="https://rfef.es/es"><img src="/img/española.svg"></a>
+                <a href="https://www.futgal.es/pnfg/"><img src="/img/gallega.png"></a>
+                <a href="https://www.fcf.cat/"><img src="/img/catalana.png"></a>
+                <a href="https://www.rffm.es/"><img src="/img/madrilena.png"></a>
+                <a href="https://www.rfaf.es/pnfg/"><img src="/img/andaluza.png"></a>
+                <a href="https://www.asturfutbol.es/pnfg/"><img src="/img/asturiana.png"></a>
+            </section>
+        </aside>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

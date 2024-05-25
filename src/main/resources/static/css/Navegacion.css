@@ -10,6 +10,8 @@ print {
 
         >a {
             display: block !important;
+            color: white;
+            text-decoration: none;
 
             >span:last-child {
                 display: none;

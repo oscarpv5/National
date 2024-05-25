@@ -1,0 +1,33 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    main.legal {
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        padding: 1em 2em;
+        text-align: justify;
+
+        > *:not(h1,h2) {
+            text-transform: none;
+            font-size: 1.1em;
+        }
+
+        > p > a:visited, > p > a:link {
+            color: #DDD;
+        }
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {}

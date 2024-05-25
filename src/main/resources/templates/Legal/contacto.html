@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Formulario Enviado')}"> </head>
+
+<body>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        <section>
+            <h1>Contacto</h1>
+            <form th:action="@{/contacto/submit}" method="post" th:object="${formulario}">
+                <label for="nombre">Nombre: </label>
+                <input type="text" th:field="*{nombre}">
+                <label for="mail">Email: </label>
+                <input type="text" th:field="*{mail}">
+                <label for="asunto">Asunto: </label>
+                <input type="text" th:field="*{asunto}">
+                <label for="mensaje">Mensaje: </label>
+                <textarea th:field="*{mensaje}" placeholder="Escriba su mensaje"></textarea>
+                <span></span>
+                <input type="submit">
+            </form>
+        </section>
+        <aside>
+            <div>colaboracion</div>
+            <section>
+                <a href="https://rfef.es/es"><img src="img/española.svg"></a>
+                <a href="https://www.futgal.es/pnfg/"><img src="img/gallega.png"></a>
+                <a href="https://www.fcf.cat/"><img src="img/catalana.png"></a>
+                <a href="https://www.rffm.es/"><img src="img/madrilena.png"></a>
+                <a href="https://www.rfaf.es/pnfg/"><img src="img/andaluza.png"></a>
+                <a href="https://www.asturfutbol.es/pnfg/"><img src="img/asturiana.png"></a>
+            </section>
+        </aside>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
+</body>
+
+</html>

@@ -21,6 +21,7 @@ print {
             color: inherit;
             font: inherit;
             cursor: pointer;
+            text-decoration: none;
 
             > * {
                 margin: auto 0;

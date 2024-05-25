@@ -1,0 +1,38 @@
+/* XS -- vista de móvil, universal */
+@media screen,
+print {
+    main>section {
+        display: flex;
+        flex-direction: column;
+        >h1 {
+            margin-inline: auto;
+        }
+        >form {
+            display: grid;
+            flex: 1;
+            grid-template-columns: 20% 80%;
+            grid-template-rows: auto auto auto 1fr auto;
+            gap: .5rem 1rem;
+        }
+    }
+
+    main > .mensajeEnviado > h1 {
+        margin:auto;
+        text-align: center;
+    }
+}
+
+/* S -- ancho de 576px */
+@media screen and (min-width: 36rem) {}
+
+/* M -- ancho de 768px */
+@media screen and (min-width: 48rem) {}
+
+/* L -- ancho de 992px */
+@media screen and (min-width: 62rem) {}
+
+/* XL -- ancho de 1200px */
+@media screen and (min-width: 75rem) {}
+
+/* XXL -- -- ancho de 1408px*/
+@media screen and (min-width: 88rem) {}

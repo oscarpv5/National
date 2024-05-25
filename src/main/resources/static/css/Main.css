@@ -1,7 +1,7 @@
 /* XS -- vista de móvil, universal */
 @media screen,
 print {
-    main {
+    main:not(.legal) {
         display: flex;
         flex-wrap: wrap;
         flex: 1;
@@ -22,7 +22,7 @@ print {
 
 /* XXL -- -- ancho de 1408px*/
 @media screen and (min-width: 88rem) {
-    main {
+    main:not(.legal) {
         display: grid;
         grid-template-rows: unset;
         grid-template-columns: 1fr 3fr;
@@ -37,9 +37,14 @@ print {
             width: unset;
 
         }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
-    main:has(> aside + section + aside) {
+    main:not(.legal):has(> aside + section + aside) {
         grid-template-columns: 1fr 2fr 1fr;
 
         /* Desactiva el centrado simulado */
