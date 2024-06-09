@@ -7,29 +7,29 @@
 </head>
 <body>
     <aside th:fragment="aside" class="navegacion">
-        <a th:href="@{/liga}">
-            <span class="material-symbols-outlined">trophy</span>
-            <span>liga</span>
+        <a title="Liga" th:href="@{/liga}">
+            <span role="none" class="material-symbols-outlined">trophy</span>
+            <span role="none">liga</span>
         </a>
-        <a  th:href="@{/club}">
-            <span class="material-symbols-outlined">groups</span>
-            <span>club</span>
+        <a title="Partido" th:href="@{/partido}">
+            <span role="none" class="material-symbols-outlined">sports</span>
+            <span role="none">partido</span>
         </a>
-        <a  th:href="@{/campo}">
-            <span class="material-symbols-outlined">stadium</span>
-            <span>campo</span>
+        <a title="Club" th:href="@{/club}">
+            <span role="none" class="material-symbols-outlined">groups</span>
+            <span role="none">club</span>
         </a>
-        <a  th:href="@{/jugadores}">
-            <span class="material-symbols-outlined">directions_run</span>
-            <span>jugador</span>
+        <a title="Campo" th:href="@{/campo}">
+            <span role="none" class="material-symbols-outlined">stadium</span>
+            <span role="none">campo</span>
         </a>
-        <a  th:href="@{/partido}">
-            <span class="material-symbols-outlined">sports</span>
-            <span>partido</span>
+        <a title="Jugador" th:href="@{/jugadores}">
+            <span role="none" class="material-symbols-outlined">directions_run</span>
+            <span role="none">jugador</span>
         </a>
-        <a sec:authorize="hasRole('ADMIN')" th:href="@{/usuario}">
-            <span class="material-symbols-outlined">diversity_3</span>
-            <span>usuarios</span>
+        <a title="Usuarios" sec:authorize="hasRole('ADMIN')" th:href="@{/usuario}">
+            <span role="none" class="material-symbols-outlined">diversity_3</span>
+            <span role="none">usuarios</span>
         </a>
     </aside>
 </body>

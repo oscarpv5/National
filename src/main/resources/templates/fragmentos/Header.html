@@ -6,38 +6,38 @@
 
 <body>
     <header th:fragment="header">
-        <a th:href="@{/contacto}" class="icono">
-            <span class="material-symbols-outlined">call</span>
-            <span>contacto</span>
+        <a title="Contacto" th:href="@{/contacto}" class="icono">
+            <span role="none" class="material-symbols-outlined">call</span>
+            <span role="none">contacto</span>
         </a>
-        <a th:href="@{/quienessomos}" class="icono">
-            <span class="material-symbols-outlined">help</span>
-            <span>quienes somos</span>
+        <a title="Quienes somos" th:href="@{/quienessomos}" class="icono">
+            <span role="none" class="material-symbols-outlined">help</span>
+            <span role="none">quienes somos</span>
         </a>
-        <a th:href="@{/}" class="logo">
-            <img src="/img/logo.png">
-            <span>national football</span>
-            <span>competition</span>
-            <img src="/img/logo.png">
+        <a title="Inicio" th:href="@{/}" class="logo">
+            <img role="none" src="/img/logo.png">
+            <span role="none">national football</span>
+            <span role="none">competition</span>
+            <img role="none" src="/img/logo.png">
         </a>
-        <a sec:authorize="!isAuthenticated()" th:href="@{/login}" class="icono">
-            <span class="material-symbols-outlined">login</span>
-            <span>iniciar sesion</span>
+        <a title="Iniciar sesión" sec:authorize="!isAuthenticated()" th:href="@{/login}" class="icono">
+            <span role="none" class="material-symbols-outlined">login</span>
+            <span role="none">iniciar sesion</span>
         </a>
-        <form method="post" sec:authorize="isAuthenticated()" th:action="@{/logout}">
-            <button class="icono">
-                <span class="material-symbols-outlined">logout</span>
-                <span>cerrar sesion</span>
+        <form title="Cerrar sesión" role="link" method="post" sec:authorize="isAuthenticated()" th:action="@{/logout}">
+            <button role="none" class="icono">
+                <span role="none"class="material-symbols-outlined">logout</span>
+                <span role="none">cerrar sesion</span>
             </button>
             
         </form>
-        <a  sec:authorize="!isAuthenticated()"  th:href="@{/usuario/registro}" class="icono">
-            <span class="material-symbols-outlined">how_to_reg</span>
-            <span>registrarse</span>
+        <a title="Registrarse" sec:authorize="!isAuthenticated()"  th:href="@{/usuario/registro}" class="icono">
+            <span role="none" class="material-symbols-outlined">how_to_reg</span>
+            <span role="none">registrarse</span>
         </a>
-        <a  sec:authorize="isAuthenticated()"  th:href="@{/usuario/perfil}" class="icono">
-            <span class="material-symbols-outlined">person</span>
-            <span>mi cuenta</span>
+        <a title="Mi cuenta" sec:authorize="isAuthenticated()"  th:href="@{/usuario/perfil}" class="icono">
+            <span role="none" class="material-symbols-outlined">person</span>
+            <span role="none">mi cuenta</span>
         </a>
     </header>
 </body>
