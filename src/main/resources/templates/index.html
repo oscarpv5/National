@@ -3,7 +3,9 @@
 
 <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('National Football Competition')}">
 </head>
-
+<head>
+    <script src="/js/carrusel.js" type="module"></script>
+</head>
 <body>
     <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
 
@@ -20,27 +22,14 @@
                 <div class="carrusel">
                     <div>
                         <div>
-                            <button class="material-symbols-outlined">navigate_before</button>
+                            <button id="anterior" class="material-symbols-outlined">navigate_before</button>
                         </div>
-                        <img src="img/Partido_Jornada.gif">
+                        <video id="player" src=""></video>
                         <div>
-                            <button class="material-symbols-outlined">navigate_next</button>
+                            <button id="posterior" class="material-symbols-outlined">navigate_next</button>
                         </div>
                     </div>
-                    <div>
-                        <label class="material-symbols-outlined"> radio_button_checked
-                            <input type="radio" checked name="boton">
-                        </label>
-                        <label class="material-symbols-outlined">
-                            <!-- radio_button_unchecked -->
-                            radio_button_checked
-                            <input type="radio" name="boton">
-                        </label>
-                        <label class="material-symbols-outlined">
-                            <!-- radio_button_unchecked -->
-                            radio_button_checked
-                            <input type="radio" name="boton">
-                        </label>
+                    <div id="videos">
                     </div>
                 </div>
             </div>
