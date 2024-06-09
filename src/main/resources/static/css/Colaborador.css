@@ -66,6 +66,8 @@ print {
 @media screen and (min-width: 88rem) {
     main>aside:last-child>section {
         grid-template-columns: repeat(2, 1fr);
-
+        position: sticky;
+        top: 0;
+        max-height: 85vh;
     }
 }

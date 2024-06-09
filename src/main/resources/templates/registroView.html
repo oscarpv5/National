@@ -5,25 +5,30 @@
 </head>
 
 <body>
-  <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-  <main>
-    <section></section>
-    <div>
-      <h1>Nuevo Usuario</h1>
-      <form method="post" th:action="@{/usuario/registro}" th:object="${usuarioForm}">
-          DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
-          Nombre: <input type="text" th:field="*{nombre}"><br>
-          Contraseña: <input type="password" th:field="*{contrasena}"><br>
-          Email: <input type="email" th:field="*{email}"><br>
-          <input type="submit">
-      </form>
-    </div>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <main>
+        <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
 
-  </main>
-  
-
-  <footer th:insert="~{fragmentos/Footer.html :: footer}">
-  </footer>
+        <section>
+            <div>
+                <h2>
+                    <span class="material-symbols-outlined">how_to_reg</span>
+                    <span>Registro</span>
+                    <span class="material-symbols-outlined">how_to_reg</span>
+                </h2>
+            </div>
+            <form method="post" th:action="@{/usuario/registro}" th:object="${usuarioForm}">
+                DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
+                Nombre: <input type="text" th:field="*{nombre}"><br>
+                Contraseña: <input type="password" th:field="*{contrasena}"><br>
+                Email: <input type="email" th:field="*{email}"><br>
+                <input type="submit">
+            </form>
+        </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    </main>
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
+    </footer>
 </body>
 
 </html>

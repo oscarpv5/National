@@ -7,6 +7,8 @@ print {
         transition: .7s color;
         width: 100svw;
         padding: 0.5rem;
+        position: sticky;
+        top: 0;
 
         >a {
             display: block !important;
@@ -62,6 +64,7 @@ print {
         display: grid;
         padding-left: 20%;
         width: unset;
+        max-height: 90vh;
         justify-content: left;
 
         >a {

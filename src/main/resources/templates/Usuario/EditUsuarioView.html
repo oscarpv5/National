@@ -5,19 +5,19 @@
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
     <main>
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
 
         <section>
             <div>
-            <h2>
-                <span class="material-symbols-outlined">diversity_3</span>
-                <span>USUARIOS</span>
-                <span class="material-symbols-outlined">diversity_3</span>
-            </h2>                 
+                <h2>
+                    <span class="material-symbols-outlined">diversity_3</span>
+                    <span>USUARIOS</span>
+                    <span class="material-symbols-outlined">diversity_3</span>
+                </h2>
             </div>
-   
+
             <form th:action="@{/usuario/editar}" method="post" th:object="${usuarioForm}">
                 DNI: <input type="text" th:field="*{dni}" th:readonly="*{dni}!=null"><br>
                 Nombre: <input type="text" th:field="*{nombre}"><br>
@@ -25,7 +25,7 @@
                 Email: <input type="email" th:field="*{email}"><br>
                 Rol: <input type="text" th:field="*{rol}"><br>
                 <input type="submit">
-            </form>            
+            </form>
         </section>
         <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
     </main>

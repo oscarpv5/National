@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
     <main>
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
         <section>
@@ -15,19 +15,18 @@
                     <span>USUARIO</span>
                     <span class="material-symbols-outlined">person</span>
                 </h2>
-                <form th:action="@{/usuario/editar}" method="post" th:object="${usuarioForm}">
-                    DNI: <input type="text" th:field="*{dni}" readonly="true"><br>
-                    Nombre: <input type="text" th:field="*{nombre}" readonly="true"><br>
-                    Contraseña: <input type="password" th:field="*{contrasena}"><br>
-                    Email: <input type="email" th:field="*{email}">
-                    <input type="hidden" th:field="*{rol}"><br>
-                    <input type="submit">
-                </form>
             </div>
+            <form th:action="@{/usuario/editar}" method="post" th:object="${usuarioForm}">
+                DNI: <input type="text" th:field="*{dni}" readonly="true"><br>
+                Nombre: <input type="text" th:field="*{nombre}" readonly="true"><br>
+                Contraseña: <input type="password" th:field="*{contrasena}"><br>
+                Email: <input type="email" th:field="*{email}">
+                <input type="hidden" th:field="*{rol}"><br>
+                <input type="submit">
+            </form>
         </section>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
     </main>
-
-
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
 </body>
