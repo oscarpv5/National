@@ -41,6 +41,7 @@ public class SecurityConfig {
                         //user -> club, campo, liga, partido
                         //publico general -> liga, partido
                 .requestMatchers("/", "/liga", "/partido", "/usuario/registro").permitAll()
+                .requestMatchers("/usuario/perfil").authenticated()
                 .requestMatchers("/club", "/campo").hasAnyRole("USER", "ADMIN")
                 .requestMatchers("/club/**", "/campo/**", "/liga/**", "/partido/**",
                                         "/jugadores/**", "/usuario/**", "/h2-console", "/h2-console/**", "/api/v1/auth/admin").hasRole("ADMIN")

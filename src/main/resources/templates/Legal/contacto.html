@@ -17,28 +17,22 @@
             </div>
             <form th:action="@{/contacto/submit}" method="post" th:object="${formulario}">
                 <label for="nombre">Nombre: </label>
-                <input type="text" th:field="*{nombre}">
+                <input type="text" th:field="*{nombre}" required>
                 <label for="mail">Email: </label>
-                <input type="text" th:field="*{mail}">
+                <input type="text" th:field="*{mail}" required>
                 <label for="asunto">Asunto: </label>
-                <input type="text" th:field="*{asunto}">
+                <input type="text" th:field="*{asunto}" required>
                 <label for="mensaje">Mensaje: </label>
-                <textarea th:field="*{mensaje}" placeholder="Escriba su mensaje"></textarea>
+                <textarea th:field="*{mensaje}" placeholder="Escriba su mensaje" required></textarea>
+                <span></span>
+                <span>
+                    <span th:if="${error}" th:remove="tag">Debes cubrir todos los campos</span>
+                </span>
                 <span></span>
                 <input type="submit">
             </form>
         </section>
-        <aside>
-            <div>colaboracion</div>
-            <section>
-                <a href="https://rfef.es/es"><img src="img/española.svg"></a>
-                <a href="https://www.futgal.es/pnfg/"><img src="img/gallega.png"></a>
-                <a href="https://www.fcf.cat/"><img src="img/catalana.png"></a>
-                <a href="https://www.rffm.es/"><img src="img/madrilena.png"></a>
-                <a href="https://www.rfaf.es/pnfg/"><img src="img/andaluza.png"></a>
-                <a href="https://www.asturfutbol.es/pnfg/"><img src="img/asturiana.png"></a>
-            </section>
-        </aside>
+        <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
     </main>
     <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
     </footer>
