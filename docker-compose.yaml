@@ -12,6 +12,7 @@ services:
       - MYSQL_DATABASE=national
       - MYSQL_USERNAME=root
       - MYSQL_PASSWORD=password1
+      - LANG=C.UTF-8
     depends_on:
       - mysql-server
     networks:
@@ -24,6 +25,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password1
       - MYSQL_DATABASE=national
+      - LANG=C.UTF-8
     volumes:
       - mysql_dbs:/var/lib/mysql:rw
     networks:
@@ -31,6 +33,7 @@ services:
     configs:
       - source: initdb
         target: /docker-entrypoint-initdb.d/initdb.sql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
 
   phpmyadmin:
