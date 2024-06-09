@@ -16,6 +16,7 @@ services:
       - mysql-server
     networks:
       - national_network
+    restart: always
 
   mysql-server:
     image: mysql
@@ -27,6 +28,10 @@ services:
       - mysql_dbs:/var/lib/mysql:rw
     networks:
       - national_network
+    configs:
+      - source: initdb
+        target: /docker-entrypoint-initdb.d/initdb.sql
+    restart: always
 
   phpmyadmin:
     image: phpmyadmin
@@ -41,6 +46,7 @@ services:
       - national_network
     depends_on:
       - mysql-server
+    restart: unless-stopped
       
 networks:
   national_network:
@@ -48,3 +54,8 @@ networks:
 
 volumes:
   mysql_dbs:
+
+configs:
+  initdb:
+    file: ./national.sql
+    
