@@ -33,12 +33,4 @@ public class LigaService {
     public void borrar(Integer codigo) throws Exception {
         ligaRespository.deleteById(codigo);
     }
-
-    public ArrayList<String> ligaBuscados() {
-        ArrayList<String> ligas = new ArrayList<>();
-        ligas.add("LaLiga EA Sports");
-        ligas.add("LaLiga Hypermotion");
-        ligas.add("Primera Division RFEF");
-        return ligas;
-    }
 }

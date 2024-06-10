@@ -33,12 +33,4 @@ public class ClubService {
     public void borrar(Integer codigo) throws Exception {
         clubRespository.deleteById(codigo);
     }
-
-    public ArrayList<String> clubBuscados() {
-        ArrayList<String> clubs = new ArrayList<>();
-        clubs.add("Futbol Club Barcelona");
-        clubs.add("Real Club Deportivo de La Coruña");
-        clubs.add("Real Sociedad de Futbol");
-        return clubs;
-    }
 }
