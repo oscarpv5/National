@@ -3,8 +3,8 @@
 print {
     .filtro {
         display: grid;
-        flex: 1;
-        gap: 1rem;
+        flex: 1; /* permite que el contenedor ocupe el esapcio disponible */
+        gap: 1rem; /* espacio entre los elementos de la cuadricula */
         margin: 1rem 0;
 
         >span {
@@ -13,7 +13,7 @@ print {
 
         >div {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* organiza los elementos en una columna */
             gap: 1rem;
 
             >span {
@@ -26,10 +26,6 @@ print {
                 margin: 0 auto auto auto;
             }
         }
-
-
-
-
     }
 }
 
@@ -42,15 +38,15 @@ print {
 /* L -- ancho de 992px */
 @media screen and (min-width: 62rem) {
     .filtro {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: unset;
+        grid-template-columns: 1fr 1fr 1fr; /* cuadricula con 3 columnas */
+        grid-template-rows: auto auto; /* cuadricula con 2 filas */
+        gap: unset; /* elimina el espacio entre elementos de la cuadricula */
 
         >span {
             display: block;
             width: 0;
             margin: auto;
-            grid-column: 1 / -1;
+            grid-column: 1 / -1; /* el span ocupa las columnas disponibles */
         }
     }
 }
@@ -58,11 +54,11 @@ print {
 /* XL -- ancho de 1200px */
 @media screen and (min-width: 75rem) {
     .filtro {
-        grid-template-columns: 1fr 1fr 1fr auto;
-        grid-template-rows: unset;
+        grid-template-columns: 1fr 1fr 1fr auto; /* cuadricula con 3 columnas */
+        grid-template-rows: unset; /* elimina la definicion de filas automaticas */
 
         >span {
-            grid-column: unset;
+            grid-column: unset; /* elimina la configuracion de columnas ocupadas por el span */
 
             >button {
                 position: relative;

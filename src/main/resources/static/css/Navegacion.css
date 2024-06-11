@@ -3,24 +3,23 @@
 print {
     .navegacion {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-evenly; /* igual espacio entre elementos */
         transition: .7s color;
         width: 100svw;
         padding: 0.5rem;
-        position: sticky;
+        position: sticky; /* el contenedor .navegacion permanece pegado a la parte superior del scroll */
         top: 0;
 
         >a {
-            display: block !important;
+            display: block !important; /* fuerza el display block para los enlaces */
             color: white;
             text-decoration: none;
+            font-size: 1.3rem;
 
             >span:last-child {
-                display: none;
+                display: none; /* oculta el ultimo span */
                 font-size: 2rem;
             }
-
-            font-size: 1.3rem;
         }
 
         >a:hover {
@@ -63,20 +62,20 @@ print {
     .navegacion {
         display: grid;
         padding-left: 20%;
-        width: unset;
+        width: unset; /* resetea el ancho del contenedor */
         max-height: 90vh;
         justify-content: left;
 
         >a {
             display: grid;
-            margin: auto 0;
+            margin: auto 0; /* centrado vertical */
 
             >span:first-child {
                 font-size: 1.4em;
             }
 
             >span:last-child {
-                display: unset;
+                display: unset; /* muestra el ultimo span dentro del enlace */
             }
         }
     }

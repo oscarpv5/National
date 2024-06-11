@@ -2,7 +2,7 @@
 @media screen,
 print {
     * {
-        box-sizing: border-box;
+        box-sizing: border-box; /* modelo de caja */
     }
 
     body {
@@ -11,14 +11,14 @@ print {
         font-family: 'Terminator Cyr', sans-serif;
         background-image: url(../img/fondo_proy.png);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover; /* la imagen de fondo cubre el cuerpo completamente */
         background-attachment: fixed;
         background-color: rgb(80, 150, 80);
-        background-blend-mode: soft-light;
+        background-blend-mode: soft-light; /* combina el color de fondo con la imagen */
         color: white;
         height: 100vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* establece el flex en columnas */
         /* bug de Chrome*/
         max-width: 100vw;
         overflow-x: hidden;
@@ -33,7 +33,7 @@ print {
 
     div:has(>span.material-symbols-outlined) {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: auto 1fr; /* define una estructura de columnas */
 
         >span:nth-child(2) {
             margin: auto auto auto .5rem;

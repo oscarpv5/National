@@ -7,5 +7,5 @@ import opv.proyecto.opvproy.domain.Campo;
 
 @Repository
 public interface CampoRespository extends JpaRepository<Campo, String> {
-    
+
 }

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="es" xmls:th="http://www.thymeleaf.org">
 
-<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Partido')}">
-</head>
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Partido')}"></head>
+
 <head>
     <script src="/js/partidos.js" type="module"></script>
 </head>
+
 <body>
-    <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    
     <main>
+
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        
         <section>
             <div>
                 <h2>
@@ -21,27 +26,28 @@
                     <thead>
                         <tr>
                             <th class="orden Codigo">Codigo</th>
-                        <th class="orden Resultado">Resultado</th>
-                        <th class="orden Local">Local</th>
-                        <th class="orden Visitante">Visitante</th>
-                        <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
+                            <th class="orden Resultado">Resultado</th>
+                            <th class="orden Local">Local</th>
+                            <th class="orden Visitante">Visitante</th>
+                            <th sec:authorize="hasRole('ADMIN')" colspan="2">CRUD</th>
                         </tr>
                         <tr sec:authorize="hasRole('ADMIN')">
                             <td>
                                 <input type="text" placeholder="codigo" form="nuevo" name="codigo">
                             </td>
                             <td>
-                                <input type="text" placeholder="resultado" form="nuevo"
-                                    name="resultado">
+                                <input type="text" placeholder="resultado" form="nuevo" name="resultado">
                             </td>
                             <td>
                                 <select form="nuevo" name="local">
-                                    <option th:each="club : ${clubs}" th:value="${club.codigo}" th:text="${club.nombre}"></option>
+                                    <option th:each="club : ${clubs}" th:value="${club.codigo}"
+                                        th:text="${club.nombre}"></option>
                                 </select>
                             </td>
                             <td>
                                 <select form="nuevo" name="visitante">
-                                    <option th:each="club : ${clubs}" th:value="${club.codigo}" th:text="${club.nombre}"></option>
+                                    <option th:each="club : ${clubs}" th:value="${club.codigo}"
+                                        th:text="${club.nombre}"></option>
                                 </select>
                             </td>
                             <td colspan="2">
@@ -56,10 +62,13 @@
                 </table>
             </div>
         </section>
+
         <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    
     </main>
-    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
-    </footer>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}"></footer>
+
 </body>
 
 </html>

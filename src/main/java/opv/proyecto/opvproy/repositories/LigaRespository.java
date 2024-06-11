@@ -7,5 +7,5 @@ import opv.proyecto.opvproy.domain.Liga;
 
 @Repository
 public interface LigaRespository extends JpaRepository<Liga, Integer> {
-    
+
 }

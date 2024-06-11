@@ -3,28 +3,33 @@
 print {
     main>section {
         display: flex;
-        flex-direction: column;
-        >h1 {
-            margin-inline: auto;
-        }
-        >form:has(textarea) {
-            flex: 1;
+        flex-direction: column; /* organiza los elementos en una columna */
 
+        >h1 {
+            margin-inline: auto; /* centrado horizontal */
         }
+
+        >form:has(textarea) {
+            flex: 1; /* permite que crezca el formulario y ocupe el espacio disponible si hay textarea */
+        }
+
         >form {
             display: grid;
-            grid-template-columns: 1fr 4fr;
+            grid-template-columns: 1fr 4fr; /* una cuadricula con 2 columnas ocupanda 1 fraccion y 4 respectivamente */
             grid-template-rows: auto auto auto 1fr auto;
-            gap: .5rem 1rem;
-            > input, textarea, select {
+            gap: .5rem 1rem; /* espacio entre filas y columnas */
+
+            >input,
+            textarea,
+            select {
                 font-size: 0.7em;
                 padding: .25rem;
             }
         }
     }
 
-    main > .mensajeEnviado > h1 {
-        margin:auto;
+    main>.mensajeEnviado>h1 {
+        margin: auto;
         text-align: center;
     }
 }

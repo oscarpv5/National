@@ -10,6 +10,7 @@ import opv.proyecto.opvproy.repositories.JugadorRespository;
 
 @Service
 public class JugadorService {
+    
     @Autowired
     private JugadorRespository jugadorRespository;
 

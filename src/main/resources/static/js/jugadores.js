@@ -11,12 +11,12 @@ async function comprobarPermisos() {
     return await fetch("/api/v1/auth/admin")
         .then((respuesta) => respuesta.status == 202)
         .catch(_ => false)
-}
+} // realiza una solicitud a la API para verificar si es ADMIN
 
 async function descargarJugadores() {
     return await fetch("/api/v1/jugador")
         .then((respuesta) => respuesta.json())
-}
+} // descarga la lista de jugadores a traves de la API
 
 function crearFila({ dni, nombre, ubicacion, club }) {
     const FILA = document.createElement("tr")
@@ -66,14 +66,18 @@ function imprimirLista(orden = "") {
 
     document.querySelector(".contenidoTabla")
         .replaceChildren(...ORDEN.elementos.map(crearFila))
-}
+} // imprime la lista de jugadores, ordenandolos si es necesario
 
 imprimirLista()
 
 document.querySelector('.orden.Dni').addEventListener("click", () => imprimirLista("dni"))
+// asignan eventos de click para "dni" y se ordena
 document.querySelector('.orden.Nombre').addEventListener("click", () => imprimirLista("nombre"))
+// asignan eventos de click para "nombre" y se ordena
 document.querySelector('.orden.Ubicacion').addEventListener("click", () => imprimirLista("ubicacion"))
+// asignan eventos de click para "ubicacion" y se ordena
 document.querySelector('.orden.Club').addEventListener("click", () => imprimirLista("club"))
+// asignan eventos de click para "club" y se ordena
 
 document.querySelector('.tabla>thead').addEventListener("click", marcarOrdenListado)
 
@@ -84,4 +88,4 @@ function marcarOrdenListado(e) {
         .forEach(campo => campo.classList.remove("asc", "desc"))
 
     e.target.classList.add(ORDEN.direccion == "asc" ? "asc" : "desc");
-}
+} // marca la direccion de la ordenacion en el encabezado

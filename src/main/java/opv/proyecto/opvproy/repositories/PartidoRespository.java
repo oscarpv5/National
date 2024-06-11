@@ -7,5 +7,5 @@ import opv.proyecto.opvproy.domain.Partido;
 
 @Repository
 public interface PartidoRespository extends JpaRepository<Partido, Integer> {
-    
+
 }

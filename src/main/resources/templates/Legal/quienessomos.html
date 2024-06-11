@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Copyright')}"> </head>
-    <body>
-        <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-        <main class="legal">
-            <h2>¿Quiénes somos?</h2>
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Copyright')}"></head>
+
+<body>
+
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    
+    <main class="legal">
+
+        <h2>¿Quiénes somos?</h2>
         <p>Somos un equipo diverso y apasionado de desarrolladores, diseñadores,
             y amantes del fútbol que hemos unido fuerzas para crear National
             Football Competition, una plataforma única y poderosa dedicada a
@@ -20,19 +25,22 @@
             Competition no es solo un buscador de información; es un espacio diseñado
             para fomentar la comunidad y celebrar la pasión por el fútbol en todas sus formas.</p>
         <p>Nuestro equipo está formado por personas con antecedentes diversos pero con un
-            objetivo común: hacer que el fútbol sea accesible para todos. Desde expertos 
-            en tecnología hasta analistas de datos y fanáticos del deporte, cada miembro 
+            objetivo común: hacer que el fútbol sea accesible para todos. Desde expertos
+            en tecnología hasta analistas de datos y fanáticos del deporte, cada miembro
             aporta su experiencia y conocimientos para hacer de National Football Competition
-             una realidad.</p>
+            una realidad.</p>
         <p>Nos enorgullece el trabajo que hemos realizado hasta ahora, pero sabemos
-             que nuestro viaje apenas está comenzando. Estamos comprometidos a seguir
-              mejorando y ampliando nuestra plataforma para servir mejor a nuestra 
-              comunidad de usuarios y para ser un recurso invaluable para todos los
-               amantes del fútbol en nuestro país.</p>
+            que nuestro viaje apenas está comenzando. Estamos comprometidos a seguir
+            mejorando y ampliando nuestra plataforma para servir mejor a nuestra
+            comunidad de usuarios y para ser un recurso invaluable para todos los
+            amantes del fútbol en nuestro país.</p>
         <p>Gracias por ser parte de este emocionante viaje con nosotros.
-             Juntos, estamos construyendo algo especial.</p>
-        </main>
-        <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
-        </footer>
-    </body>
+            Juntos, estamos construyendo algo especial.</p>
+
+    </main>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}"></footer>
+
+</body>
+
 </html>

@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Formulario Enviado')}"> </head>
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Formulario Enviado')}"></head>
 
 <body>
+
     <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    
     <main>
         <aside th:remove="tag" th:insert="~{fragmentos/aside.html :: aside}"></aside>
+        
         <section class="mensajeEnviado">
             <h1>Su mensaje se ha enviado correctamente</h1>
         </section>
+
         <aside th:remove="tag" th:insert="~{fragmentos/colaboracion.html :: colaboracion}"></aside>
+    
     </main>
-    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
-    </footer>
+    
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}"></footer>
+
 </body>
 
 </html>

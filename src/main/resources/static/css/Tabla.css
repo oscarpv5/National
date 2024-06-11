@@ -4,64 +4,67 @@ print {
     .tabla {
         background-color: #FAFAFA;
         color: #000;
-        overflow: hidden;
-        border-radius: .33rem;
-        font: 1.2rem sans-serif;
+        overflow: hidden; /* oculta cualquier contenido desbordado */
+        border-radius: .33rem; /* bordes redondeados */
+        font: 1.2rem sans-serif; 
         width: 50vw;
-                border-spacing: 0;
+        border-spacing: 0;
 
-        > thead > tr:first-child{
+        >thead>tr:first-child {
             background-color: #CCC;
         }
-        
-        > tbody > tr:not(:first-child) > td {
+
+        >tbody>tr:not(:first-child)>td {
             border-top: .15rem solid #CCC;
-            
         }
 
         thead>tr>td {
             border-bottom: .15rem solid #CCC;
             padding: 0;
             margin: 0;
-            > input,>select {
+
+            >input,
+            >select {
                 text-transform: uppercase;
                 padding: .5rem;
                 font-size: inherit;
                 text-align: center;
                 background-color: inherit;
                 border: none;
-                outline: none;
+                outline: none; /* sin contorno */
                 width: 100%;
                 height: 100%;
             }
 
-            > input:placeholder-shown {
+            >input:placeholder-shown {
                 font-style: italic;
             }
 
-            >form > button {
+            >form>button {
                 text-transform: uppercase;
                 background-color: inherit;
                 font-size: inherit;
                 font-family: inherit;
                 border: none;
-                outline: none;
+                outline: none; /* sin contorno */
             }
         }
 
-        > thead > tr:first-child > th {
-            user-select: none;
+        >thead>tr:first-child>th {
+            user-select: none; /* evita que el texto sea seleccionable */
         }
 
-        > thead > tr > th:not(:last-child) {
-            cursor: pointer;
+        >thead>tr>th:not(:last-child) {
+            cursor: pointer; /* cambia el cursor a una mano para indicar que es clicable */
         }
 
-        > tbody > tr > td:not(:last-child), thead>tr>td {
+        >tbody>tr>td:not(:last-child),
+        thead>tr>td {
             border-right: 0.15rem solid #CCC;
         }
 
-        & tr > td, & tr > th {
+        & tr>td,
+        & tr>th {
             padding: .5rem;
             text-align: center;
 
@@ -90,6 +93,7 @@ print {
 .orden.desc::after {
     content: '▼'
 }
+
 .orden.asc::after {
     content: '▲'
 }

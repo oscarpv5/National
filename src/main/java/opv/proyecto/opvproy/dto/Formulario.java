@@ -9,10 +9,13 @@ import lombok.NoArgsConstructor;
 public class Formulario {
     @NotBlank
     private String nombre;
+
     @NotBlank
     private String mail;
+
     @NotBlank
     private String asunto;
+
     @NotBlank
     private String mensaje;
 }

@@ -10,6 +10,7 @@ import opv.proyecto.opvproy.repositories.LigaRespository;
 
 @Service
 public class LigaService {
+    
     @Autowired
     private LigaRespository ligaRespository;
 

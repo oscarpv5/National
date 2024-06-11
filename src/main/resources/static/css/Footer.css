@@ -6,7 +6,7 @@ print {
     }
 
     footer img {
-        aspect-ratio: 1/1;
+        aspect-ratio: 1/1; /* establece el aspecto de la imagen como 1:1 (cuadrada) */
         height: 35px;
     }
 
@@ -30,7 +30,7 @@ print {
 
     footer .twitter {
         background-color: white;
-        border-radius: 20%;
+        border-radius: 20%; /* esquinas redondas */
     }
 
     footer div.ayuda>* {

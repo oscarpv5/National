@@ -10,6 +10,7 @@ import opv.proyecto.opvproy.repositories.CampoRespository;
 
 @Service
 public class CampoService {
+    
     @Autowired
     private CampoRespository campoRespository;
 

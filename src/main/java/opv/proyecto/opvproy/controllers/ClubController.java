@@ -17,6 +17,7 @@ import opv.proyecto.opvproy.services.LigaService;
 @Controller
 @RequestMapping("/club")
 public class ClubController {
+
     @Autowired
     ClubService clubService;
 

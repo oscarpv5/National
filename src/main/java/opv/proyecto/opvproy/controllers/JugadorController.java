@@ -17,6 +17,7 @@ import opv.proyecto.opvproy.services.JugadorService;
 @Controller
 @RequestMapping("/jugadores")
 public class JugadorController {
+
     @Autowired
     JugadorService jugadorService;
 

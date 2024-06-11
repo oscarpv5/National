@@ -7,5 +7,5 @@ import opv.proyecto.opvproy.domain.Jugador;
 
 @Repository
 public interface JugadorRespository extends JpaRepository<Jugador, String> {
-    
+
 }

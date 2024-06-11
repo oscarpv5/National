@@ -18,6 +18,7 @@ import opv.proyecto.opvproy.services.UsuarioService;
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
+    
     @Autowired
     UsuarioService usuarioService;
 
@@ -30,7 +31,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/perfil")
-    public String editarPerfil (Model model) {
+    public String editarPerfil(Model model) {
         model.addAttribute("usuarioForm", usuarioService.obtenerUsuarioActual().get());
         return "Usuario/EditPerfil";
     }

@@ -7,5 +7,5 @@ import opv.proyecto.opvproy.domain.Club;
 
 @Repository
 public interface ClubRespository extends JpaRepository<Club, Integer> {
-    
+
 }

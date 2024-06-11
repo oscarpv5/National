@@ -10,6 +10,7 @@ import opv.proyecto.opvproy.repositories.ClubRespository;
 
 @Service
 public class ClubService {
+    
     @Autowired
     private ClubRespository clubRespository;
 

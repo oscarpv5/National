@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Politica de cookies')}"> </head>
-    <body>
-        <header  th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
-        <main class="legal">
-            <h1>Política de Cookies</h1>
+
+<head th:remove="tag" th:insert="~{fragmentos/head.html :: head('Politica de cookies')}"></head>
+
+<body>
+
+    <header th:remove="tag" th:insert="~{fragmentos/Header.html :: header}"></header>
+    
+    <main class="legal">
+
+        <h1>Política de Cookies</h1>
 
         <h2>1. Introducción</h2>
         <p>En NATIONAL FOOTBALL COMPETITION, valoramos la privacidad de nuestros
@@ -19,11 +24,12 @@
             sobre tu visita, como tus preferencias y acciones anteriores.</p>
 
         <h2>3. Tipos de Cookies que Utilizamos</h2>
-        <p>En nuestro sitio web solo utilizamos 
+        <p>En nuestro sitio web solo utilizamos
             <strong>cookies funcionales</strong>.
             Estas cookies son esenciales para recordar las elecciones que haces
             (como tu nombre de usuario, idioma o la región en la que te encuentras)
-            y para proporcionarte características mejoradas y más personalizadas.</p>
+            y para proporcionarte características mejoradas y más personalizadas.
+        </p>
 
         <h2>4. ¿Cómo Utilizamos las Cookies?</h2>
         <p>Utilizamos cookies funcionales para varias finalidades:</p>
@@ -31,11 +37,13 @@
             <li>
                 <strong>Personalización:</strong>
                 Para recordar tus preferencias y proporcionarte una
-                experiencia más personalizada.</li>
+                experiencia más personalizada.
+            </li>
             <li>
                 <strong>Facilidad de Uso:</strong>
                 Para asegurarnos de que el sitio web funcione de manera eficiente y
-                se mantengan tus configuraciones durante las visitas.</li>
+                se mantengan tus configuraciones durante las visitas.
+            </li>
         </ul>
 
         <h2>5. Gestión de Cookies</h2>
@@ -44,7 +52,8 @@
             Puedes eliminar todas las cookies que ya están en tu ordenador y configurar
             la mayoría de los navegadores para que no se instalen. Sin embargo, si lo haces,
             es posible que tengas que ajustar manualmente algunas preferencias cada vez que
-            visites un sitio y que algunos servicios y funcionalidades no funcionen.</p>
+            visites un sitio y que algunos servicios y funcionalidades no funcionen.
+        </p>
 
         <h2>6. Cambios en la Política de Cookies</h2>
         <p>Nos reservamos el derecho a actualizar esta política de cookies en cualquier momento.
@@ -54,15 +63,20 @@
 
         <h2>7. Contacto</h2>
         <p>Si tienes alguna pregunta sobre nuestra política de cookies, no dudes en
-            contactarnos a través de 
+            contactarnos a través de
             <a href="mailto:oscaraaron.pv@gmail.com">correo electrónico</a>
-            o <a href="tel:+34600645414"></a>600645414.</p>
+            o <a href="tel:+34600645414"></a>600645414.
+        </p>
 
         <p>
             <strong>Fecha de la última actualización:</strong>
-            25 de Mayo de 2024</p>
-        </main>
-        <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}">
-        </footer>
-    </body>
+            25 de Mayo de 2024
+        </p>
+
+    </main>
+
+    <footer th:remove="tag" th:insert="~{fragmentos/Footer.html :: footer}"></footer>
+
+</body>
+
 </html>

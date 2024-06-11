@@ -17,6 +17,7 @@ import opv.proyecto.opvproy.services.PartidoService;
 @Controller
 @RequestMapping("/partido")
 public class PartidoController {
+    
     @Autowired
     PartidoService partidoService;
 
@@ -57,11 +58,11 @@ public class PartidoController {
     public String showEditSubmit(@Valid Partido partidoForm, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors())
             return "error/500";
-            try {
-                partidoService.editar(partidoForm);
-            } catch (NullPointerException e) {
-                return "error/500";
-            }
+        try {
+            partidoService.editar(partidoForm);
+        } catch (NullPointerException e) {
+            return "error/500";
+        }
         return "redirect:/partido";
     }
 
@@ -69,11 +70,11 @@ public class PartidoController {
     public String showNewPartidoSubmit(@Valid Partido partidoForm, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors())
             return "error/500";
-            try {
-                partidoService.añadir(partidoForm);
-            } catch (NullPointerException e) {
-                return "error/500";
-            }
+        try {
+            partidoService.añadir(partidoForm);
+        } catch (NullPointerException e) {
+            return "error/500";
+        }
         return "redirect:/partido";
     }
 }

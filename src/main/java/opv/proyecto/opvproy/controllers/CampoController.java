@@ -17,8 +17,10 @@ import opv.proyecto.opvproy.services.ClubService;
 @Controller
 @RequestMapping("/campo")
 public class CampoController {
+
     @Autowired
     CampoService campoService;
+    
     @Autowired
     ClubService clubService;
 

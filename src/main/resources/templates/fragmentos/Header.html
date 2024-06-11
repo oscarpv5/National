@@ -5,7 +5,9 @@
 </head>
 
 <body>
+
     <header th:fragment="header">
+
         <a title="Contacto" th:href="@{/contacto}" class="icono">
             <span role="none" class="material-symbols-outlined">call</span>
             <span role="none">contacto</span>
@@ -26,20 +28,22 @@
         </a>
         <form title="Cerrar sesión" role="link" method="post" sec:authorize="isAuthenticated()" th:action="@{/logout}">
             <button role="none" class="icono">
-                <span role="none"class="material-symbols-outlined">logout</span>
+                <span role="none" class="material-symbols-outlined">logout</span>
                 <span role="none">cerrar sesion</span>
             </button>
-            
+
         </form>
-        <a title="Registrarse" sec:authorize="!isAuthenticated()"  th:href="@{/usuario/registro}" class="icono">
+        <a title="Registrarse" sec:authorize="!isAuthenticated()" th:href="@{/usuario/registro}" class="icono">
             <span role="none" class="material-symbols-outlined">how_to_reg</span>
             <span role="none">registrarse</span>
         </a>
-        <a title="Mi cuenta" sec:authorize="isAuthenticated()"  th:href="@{/usuario/perfil}" class="icono">
+        <a title="Mi cuenta" sec:authorize="isAuthenticated()" th:href="@{/usuario/perfil}" class="icono">
             <span role="none" class="material-symbols-outlined">person</span>
             <span role="none">mi cuenta</span>
         </a>
+
     </header>
+    
 </body>
 
 </html>

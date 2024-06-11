@@ -3,7 +3,7 @@
 print {
     main:not(.legal) {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* los hijos se envuelven en varias lineas si es necesario */
         flex: 1;
     }
 }
@@ -24,18 +24,17 @@ print {
 @media screen and (min-width: 88rem) {
     main:not(.legal) {
         display: grid;
-        grid-template-rows: unset;
-        grid-template-columns: 1fr 3fr;
+        grid-template-rows: unset; /* las filas tienen ajuste automatico */
+        grid-template-columns: 1fr 3fr; /* dos columnas con proporcion 1:3 */
         column-gap: 2rem;
-        
+
         /* Simular titulo centrado cuando solo hay dos columnas */
-        > section > div > h2 {
+        >section>div>h2 {
             margin-right: 25vw;
         }
 
         >* {
-            width: unset;
-
+            width: unset; /* resetea el ancho de los elementos hijos */
         }
 
         a {
@@ -45,12 +44,11 @@ print {
     }
 
     main:not(.legal):has(> aside + section + aside) {
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr; /* una cuadricula de 3 columnas con proporciones 1:2:1 */
 
         /* Desactiva el centrado simulado */
-        > section > div > h2 {
+        >section>div>h2 {
             margin-right: unset;
         }
-
     }
 }

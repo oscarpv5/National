@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @RestController
 @RequestMapping("/api/v1")
 public class APIController {
@@ -34,46 +33,45 @@ public class APIController {
     @Autowired
     PartidoService partidoService;
 
-    @GetMapping("/auth/admin") 
+    @GetMapping("/auth/admin")
     public ResponseEntity<?> comprobarAdmin() {
         return ResponseEntity
-            .status(HttpStatus.ACCEPTED)
-            .build();
+                .status(HttpStatus.ACCEPTED)
+                .build();
     }
 
-    @GetMapping ("/liga")
+    @GetMapping("/liga")
     public ResponseEntity<?> obtenerLigas() {
         return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(ligaService.obtenerTodos());
+                .status(HttpStatus.OK)
+                .body(ligaService.obtenerTodos());
     }
 
-    @GetMapping ("/club")
+    @GetMapping("/club")
     public ResponseEntity<?> obtenerClub() {
         return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(clubService.obtenerTodos());
+                .status(HttpStatus.OK)
+                .body(clubService.obtenerTodos());
     }
 
-    @GetMapping ("/campo")
+    @GetMapping("/campo")
     public ResponseEntity<?> obtenerCampo() {
         return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(campoService.obtenerTodos());
+                .status(HttpStatus.OK)
+                .body(campoService.obtenerTodos());
     }
 
-    @GetMapping ("/jugador")
+    @GetMapping("/jugador")
     public ResponseEntity<?> obtenerJugador() {
         return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(jugadorService.obtenerTodos());
+                .status(HttpStatus.OK)
+                .body(jugadorService.obtenerTodos());
     }
 
-    @GetMapping ("/partido")
+    @GetMapping("/partido")
     public ResponseEntity<?> obtenerPartido() {
         return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(partidoService.obtenerTodos());
+                .status(HttpStatus.OK)
+                .body(partidoService.obtenerTodos());
     }
-    
 }

@@ -10,6 +10,7 @@ import opv.proyecto.opvproy.repositories.PartidoRespository;
 
 @Service
 public class PartidoService {
+    
     @Autowired
     private PartidoRespository partidoRespository;
 

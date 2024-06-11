@@ -3,20 +3,18 @@
 print {
     main>aside:last-child {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* organiza el contenido en una columna */
         flex: 1;
     }
 
     main>aside:last-child>section {
-        display: grid;
-        justify-content: space-around;
+        display: grid; /* diseño en cuadricula */
+        justify-content: space-around; /* contrnido con un espacio alrededor */
         column-gap: 1rem;
         flex: 1;
-        grid-template-columns: repeat(2, 1fr);
-        /* Define 2 columnas de igual tamaño */
-        grid-auto-flow: row;
-        /* Asegura que los elementos se coloquen en filas */
-        grid-auto-rows: auto;
+        grid-template-columns: repeat(2, 1fr); /* define 2 columnas de igual tamaño */
+        grid-auto-flow: row; /* asegura que los elementos se coloquen en filas */
+        grid-auto-rows: auto; /* filas automaticas de tamaño automatico */
 
         >a {
             display: grid;
@@ -24,7 +22,7 @@ print {
 
         >a>img {
             width: 9rem;
-            object-fit: cover;
+            object-fit: cover; /* cubre todo el contenedor */
             margin: auto;
         }
     }
@@ -41,7 +39,7 @@ print {
 /* M -- ancho de 768px */
 @media screen and (min-width: 48rem) {
     main>aside:last-child>section {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* cambia la cuadricula a 3 columnnas */
 
     }
 }
@@ -49,7 +47,7 @@ print {
 /* L -- ancho de 992px */
 @media screen and (min-width: 62rem) {
     main>aside:last-child>section {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* cambia la cuadricula a 4 columnnas */
 
     }
 }
@@ -57,7 +55,7 @@ print {
 /* XL -- ancho de 1200px */
 @media screen and (min-width: 75rem) {
     main>aside:last-child>section {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 1fr); /* cambia la cuadricula a 5 columnnas */
 
     }
 }
@@ -65,8 +63,8 @@ print {
 /* XXL -- -- ancho de 1408px*/
 @media screen and (min-width: 88rem) {
     main>aside:last-child>section {
-        grid-template-columns: repeat(2, 1fr);
-        position: sticky;
+        grid-template-columns: repeat(2, 1fr); /* cambia la cuadricula a 2 columnnas */
+        position: sticky; /* la seccion se pega a la parte superior cuando se desplaza */
         top: 0;
         max-height: 85vh;
     }

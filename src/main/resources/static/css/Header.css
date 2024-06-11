@@ -4,8 +4,8 @@ print {
     header {
         color: #FAC2A6;
         background-color: black;
-        display: grid;
-        grid-template-columns: repeat(7, auto);
+        display: grid; /* cuadricula */
+        grid-template-columns: repeat(7, auto); /* 7 columnas de tamaño automatico */
         gap: .25rem;
         font-size: 17px;
         padding: 0.5rem;
@@ -13,25 +13,26 @@ print {
         >form>button {
             background-color: inherit;
             border: none;
-            outline: none;
+            outline: none; /* elimina el contorno */
         }
 
-        >a,>form>button {
+        >a,
+        >form>button {
             display: flex;
             color: inherit;
             font: inherit;
-            cursor: pointer;
+            cursor: pointer; /* cambia el cursor a un puntero */
             text-decoration: none;
 
-            > * {
+            >* {
                 margin: auto 0;
             }
 
-            > span:last-child {
+            >span:last-child {
                 margin-left: .5rem;
             }
         }
-        
+
         >.icono {
             >span:first-of-type {
                 font-size: 2rem;
@@ -53,24 +54,24 @@ print {
         }
 
         >.logo {
-            grid-column: 3 / 6;
+            grid-column: 3 / 6; /* hace que el .logo ocupe las 3 columnas a 6 de la cuadricula */
 
             >img {
-                aspect-ratio: 1/1;
+                aspect-ratio: 1/1; /* aspecto de imagen 1:1 (cuadrada) */
                 height: 4rem;
             }
 
             >span {
-                display: none;
+                display: none; /* oculta los span */
             }
 
             >img:last-of-type {
-                display: none;
+                display: none; /* oculta la imagen */
             }
         }
 
         >* {
-            margin: auto;
+            margin: auto; /* centrado vertical de todos los hijos del encabezado */
         }
     }
 }
@@ -83,28 +84,28 @@ print {
     header {
         >.logo {
             display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto;
-            column-gap: 0.5rem;
+            grid-template-columns: auto auto auto; /* 1 cuadricula con 3 columnas */
+            grid-template-rows: auto auto; /* 2 filas automaticas */
+            column-gap: 0.5rem; /* espacio entre columnas */
             padding: 0.5rem 0;
 
             >:first-child,
             >:last-child {
-                grid-row: 1/-1;
+                grid-row: 1/-1; /* el primer y ultimo hijo ocupan ambas filas */
             }
 
             >span:first-of-type {
-                grid-row: 1 / 2;
-                grid-column: 2 / 3;
+                grid-row: 1 / 2; /* coloca el primer span en la primera fila */
+                grid-column: 2 / 3; /* coloca el primer span en la primera columna */
             }
 
             >span {
-                display: unset;
+                display: unset; /* muestra el span */
                 text-align: center;
             }
 
             >img:last-of-type {
-                display: unset;
+                display: unset; /* muestra la ultima imagen */
             }
         }
     }
@@ -121,7 +122,7 @@ print {
     header {
         >form>button.icono>:last-child,
         >.icono>:last-child {
-            display: unset;
+            display: unset; /* muestra el ultimo hijo de .icono */
         }
 
         >.logo {

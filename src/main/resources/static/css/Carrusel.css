@@ -8,8 +8,8 @@ print {
 
             >video {
                 display: block;
-                aspect-ratio: 16/9;
-                max-width: 100%;
+                aspect-ratio: 16/9; /* aspecto de video 16/9 */
+                max-width: 100%; /* maximo de ancho del video dentro del contenedor */
                 margin: 0 1rem 1rem 0;
             }
 
@@ -22,7 +22,7 @@ print {
                     padding: 0;
                     z-index: 2;
                     border: unset;
-                    outline: unset;
+                    outline: unset; /* elimina el contorno del boton */
                     background-color: transparent;
                     font-size: 50px;
                     color: white;
@@ -38,18 +38,17 @@ print {
 
         >div:last-child {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* dentra el contenido horizontalmente */
             gap: .25rem;
             color: white;
             transition: color .7s;
 
             & input {
-                display: none;
+                display: none; /* oculta los elementos input */
             }
 
             >label:has(input:checked) {
                 color: black;
-
             }
         }
     }
